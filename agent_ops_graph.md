@@ -76,6 +76,12 @@ Sanitized project-operation graph package for RP1 agents and Claude Code.
 - **ALPG External Submodule** (`alpg`): External profile-generation submodule used as dependency/reference material.
 - **External Dependency**: Project-operation task route.
 - **DEMKit External Submodule** (`demkit`): External energy-system tooling submodule used as dependency/reference material.
+- **External Web Reference Copies**: Safe map of ignored local web-repo copies that are not project-owned submodules.
+- **External Repo Copy Policy** (`EXTERNAL_REPO_COPIES_README.md`): Policy note explaining copied external repositories, ownership, and no-push-back rules.
+- **External Reference**: Project-operation task route.
+- **RL-ADN Web Reference Copy** (`RL-ADN`): Ignored local copy of the EnergyQuantResearch RL-ADN repository for reference only.
+- **DRL Energy Scheduling Web Reference Copy** (`DRL-for-Energy-Systems-Optimal-Scheduling`): Ignored local copy of the EnergyQuantResearch DRL scheduling repository for reference only.
+- **Ignore Rules for External Copies** (`.gitignore`): Records that local external web-repo copies are ignored and not active submodules.
 - **Graph Tooling and MCP Routing**: MCP server wiring, local graph gates, and generated graph artifacts.
 - **MCP Server Map** (`.mcp.json`): Local MCP configuration for project graph servers.
 - **Graphify Query Policy** (`tools/graphify_pilot_queryset_policy.md`): Governance policy for local graphify query sets and regression gates.
@@ -196,6 +202,21 @@ Sanitized project-operation graph package for RP1 agents and Claude Code.
 - `task:submodule` -opens-> `doc:demkit`
 - `task:external_dependency` -opens-> `doc:demkit`
 - `task:repo_hygiene` -opens-> `doc:demkit`
+- `lane:external_reference_repos` -contains-> `doc:EXTERNAL_REPO_COPIES_README.md`
+- `task:external_reference` -opens-> `doc:EXTERNAL_REPO_COPIES_README.md`
+- `task:repo_hygiene` -opens-> `doc:EXTERNAL_REPO_COPIES_README.md`
+- `task:agent_rules` -opens-> `doc:EXTERNAL_REPO_COPIES_README.md`
+- `lane:external_reference_repos` -contains-> `doc:RL-ADN`
+- `task:external_reference` -opens-> `doc:RL-ADN`
+- `task:model_free` -opens-> `doc:RL-ADN`
+- `task:repo_hygiene` -opens-> `doc:RL-ADN`
+- `lane:external_reference_repos` -contains-> `doc:DRL-for-Energy-Systems-Optimal-Scheduling`
+- `task:external_reference` -opens-> `doc:DRL-for-Energy-Systems-Optimal-Scheduling`
+- `task:model_free` -opens-> `doc:DRL-for-Energy-Systems-Optimal-Scheduling`
+- `task:repo_hygiene` -opens-> `doc:DRL-for-Energy-Systems-Optimal-Scheduling`
+- `lane:external_reference_repos` -contains-> `doc:.gitignore`
+- `task:external_reference` -opens-> `doc:.gitignore`
+- `task:repo_hygiene` -opens-> `doc:.gitignore`
 - `lane:graph_tooling` -contains-> `doc:.mcp.json`
 - `task:mcp` -opens-> `doc:.mcp.json`
 - `task:graph_routing` -opens-> `doc:.mcp.json`

@@ -8,6 +8,7 @@
 - `code_script_entrypoints`: `lane_code_script_entrypoints.json`, `lane_code_script_entrypoints.md`, `lane_code_script_entrypoints.html`
 - `thesis_navigation`: `lane_thesis_navigation.json`, `lane_thesis_navigation.md`, `lane_thesis_navigation.html`
 - `submodules`: `lane_submodules.json`, `lane_submodules.md`, `lane_submodules.html`
+- `external_reference_repos`: `lane_external_reference_repos.json`, `lane_external_reference_repos.md`, `lane_external_reference_repos.html`
 - `graph_tooling`: `lane_graph_tooling.json`, `lane_graph_tooling.md`, `lane_graph_tooling.html`
 
 ## Full Graph

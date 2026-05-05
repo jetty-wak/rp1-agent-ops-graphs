@@ -1,0 +1,172 @@
+{
+  "title": "External Web Reference Copies",
+  "description": "Safe map of ignored local web-repo copies that are not project-owned submodules.",
+  "nodes": [
+    {
+      "id": "task:agent_rules",
+      "type": "task",
+      "label": "Agent Rules",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "agent_rules"
+      }
+    },
+    {
+      "id": "task:model_free",
+      "type": "task",
+      "label": "Model Free",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "model_free"
+      }
+    },
+    {
+      "id": "task:repo_hygiene",
+      "type": "task",
+      "label": "Repo Hygiene",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "repo_hygiene"
+      }
+    },
+    {
+      "id": "lane:external_reference_repos",
+      "type": "lane",
+      "label": "External Web Reference Copies",
+      "subtitle": "Safe map of ignored local web-repo copies that are not project-owned submodules.",
+      "meta": {
+        "lane_id": "external_reference_repos"
+      }
+    },
+    {
+      "id": "doc:EXTERNAL_REPO_COPIES_README.md",
+      "type": "document",
+      "label": "External Repo Copy Policy",
+      "subtitle": "Policy note explaining copied external repositories, ownership, and no-push-back rules.",
+      "meta": {
+        "path": "EXTERNAL_REPO_COPIES_README.md",
+        "open_when": "Use before interpreting or changing ignored external reference folders.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:external_reference",
+      "type": "task",
+      "label": "External Reference",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "external_reference"
+      }
+    },
+    {
+      "id": "doc:RL-ADN",
+      "type": "document",
+      "label": "RL-ADN Web Reference Copy",
+      "subtitle": "Ignored local copy of the EnergyQuantResearch RL-ADN repository for reference only.",
+      "meta": {
+        "path": "RL-ADN",
+        "open_when": "Use only as external reference material; do not treat as a project-owned submodule.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "doc:DRL-for-Energy-Systems-Optimal-Scheduling",
+      "type": "document",
+      "label": "DRL Energy Scheduling Web Reference Copy",
+      "subtitle": "Ignored local copy of the EnergyQuantResearch DRL scheduling repository for reference only.",
+      "meta": {
+        "path": "DRL-for-Energy-Systems-Optimal-Scheduling",
+        "open_when": "Use only as external reference material; do not treat as a project-owned submodule.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "doc:.gitignore",
+      "type": "document",
+      "label": "Ignore Rules for External Copies",
+      "subtitle": "Records that local external web-repo copies are ignored and not active submodules.",
+      "meta": {
+        "path": ".gitignore",
+        "open_when": "Use to verify whether a local reference folder should stay untracked.",
+        "exists_in_private_repo": true
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "lane:external_reference_repos",
+      "target": "doc:EXTERNAL_REPO_COPIES_README.md",
+      "label": "contains"
+    },
+    {
+      "source": "lane:external_reference_repos",
+      "target": "doc:RL-ADN",
+      "label": "contains"
+    },
+    {
+      "source": "lane:external_reference_repos",
+      "target": "doc:DRL-for-Energy-Systems-Optimal-Scheduling",
+      "label": "contains"
+    },
+    {
+      "source": "lane:external_reference_repos",
+      "target": "doc:.gitignore",
+      "label": "contains"
+    },
+    {
+      "source": "task:external_reference",
+      "target": "doc:EXTERNAL_REPO_COPIES_README.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:repo_hygiene",
+      "target": "doc:EXTERNAL_REPO_COPIES_README.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:agent_rules",
+      "target": "doc:EXTERNAL_REPO_COPIES_README.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:external_reference",
+      "target": "doc:RL-ADN",
+      "label": "opens"
+    },
+    {
+      "source": "task:model_free",
+      "target": "doc:RL-ADN",
+      "label": "opens"
+    },
+    {
+      "source": "task:repo_hygiene",
+      "target": "doc:RL-ADN",
+      "label": "opens"
+    },
+    {
+      "source": "task:external_reference",
+      "target": "doc:DRL-for-Energy-Systems-Optimal-Scheduling",
+      "label": "opens"
+    },
+    {
+      "source": "task:model_free",
+      "target": "doc:DRL-for-Energy-Systems-Optimal-Scheduling",
+      "label": "opens"
+    },
+    {
+      "source": "task:repo_hygiene",
+      "target": "doc:DRL-for-Energy-Systems-Optimal-Scheduling",
+      "label": "opens"
+    },
+    {
+      "source": "task:external_reference",
+      "target": "doc:.gitignore",
+      "label": "opens"
+    },
+    {
+      "source": "task:repo_hygiene",
+      "target": "doc:.gitignore",
+      "label": "opens"
+    }
+  ]
+}

@@ -46,6 +46,13 @@
         "html": "lane_submodules.html"
       },
       {
+        "lane_id": "external_reference_repos",
+        "title": "External Web Reference Copies",
+        "json": "lane_external_reference_repos.json",
+        "md": "lane_external_reference_repos.md",
+        "html": "lane_external_reference_repos.html"
+      },
+      {
         "lane_id": "graph_tooling",
         "title": "Graph Tooling and MCP Routing",
         "json": "lane_graph_tooling.json",
