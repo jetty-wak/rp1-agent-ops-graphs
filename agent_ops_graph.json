@@ -1,0 +1,927 @@
+{
+  "title": "RP1 Agent-Ops Graphs",
+  "description": "Sanitized project-operation graph package for RP1 agents and Claude Code.",
+  "privacy_boundary": "Public derived graph: includes curated roles, safe relative paths, task routing, and command references; excludes raw thesis prose, raw data, logs, archives, copied external repositories, secrets, and private paths.",
+  "lanes": [
+    {
+      "lane_id": "orientation",
+      "title": "Orientation and Current State",
+      "heading": "Where agents should start for current status, next steps, and repository navigation.",
+      "doc_count": 3
+    },
+    {
+      "lane_id": "agent_rules",
+      "title": "Agent Rules and Evidence Boundaries",
+      "heading": "Instruction files that define agent behavior, chapter roles, and evidence-status limits.",
+      "doc_count": 3
+    },
+    {
+      "lane_id": "workflow_entrypoints",
+      "title": "Workflow Entrypoints",
+      "heading": "Safe pointers to model-free, model-based, planning, and operator workflow documentation.",
+      "doc_count": 4
+    },
+    {
+      "lane_id": "thesis_navigation",
+      "title": "Thesis Navigation and Citation Controls",
+      "heading": "Where to route thesis writing, chapter-boundary, compile, and citation-audit work.",
+      "doc_count": 3
+    },
+    {
+      "lane_id": "graph_tooling",
+      "title": "Graph Tooling and MCP Routing",
+      "heading": "MCP server wiring, local graph gates, and generated graph artifacts.",
+      "doc_count": 4
+    }
+  ],
+  "tasks": [
+    "agent_rules",
+    "baseline_workflow",
+    "chapter_boundaries",
+    "citation_audit",
+    "claude_setup",
+    "compile",
+    "evidence_boundary",
+    "graph_routing",
+    "graphify",
+    "handoff",
+    "hpc",
+    "literature_graph",
+    "mcp",
+    "model_based",
+    "model_free",
+    "navigation",
+    "next_steps",
+    "operator_commands",
+    "planning",
+    "recent_changes",
+    "sac_runtime",
+    "session_start",
+    "status_check",
+    "thesis_writing",
+    "tooling",
+    "validation",
+    "workflow"
+  ],
+  "nodes": [
+    {
+      "id": "lane:orientation",
+      "type": "lane",
+      "label": "Orientation and Current State",
+      "subtitle": "Where agents should start for current status, next steps, and repository navigation.",
+      "meta": {
+        "lane_id": "orientation"
+      }
+    },
+    {
+      "id": "doc:START_HERE.md",
+      "type": "document",
+      "label": "Start Here",
+      "subtitle": "First-stop orientation for collaborators and agents.",
+      "meta": {
+        "path": "START_HERE.md",
+        "open_when": "Use at the beginning of a session to locate the live status and navigation docs.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:session_start",
+      "type": "task",
+      "label": "Session Start",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "session_start"
+      }
+    },
+    {
+      "id": "task:status_check",
+      "type": "task",
+      "label": "Status Check",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "status_check"
+      }
+    },
+    {
+      "id": "task:navigation",
+      "type": "task",
+      "label": "Navigation",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "navigation"
+      }
+    },
+    {
+      "id": "doc:STATUS.md",
+      "type": "document",
+      "label": "Live Status",
+      "subtitle": "Current project state, blockers, evidence summary, and compile gate.",
+      "meta": {
+        "path": "STATUS.md",
+        "open_when": "Use for status/progress questions before scanning long progress logs.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:evidence_boundary",
+      "type": "task",
+      "label": "Evidence Boundary",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "evidence_boundary"
+      }
+    },
+    {
+      "id": "task:next_steps",
+      "type": "task",
+      "label": "Next Steps",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "next_steps"
+      }
+    },
+    {
+      "id": "doc:NAVIGATION.md",
+      "type": "document",
+      "label": "Navigation Cheatsheet",
+      "subtitle": "Recent edit map and pointers to affected files or outputs.",
+      "meta": {
+        "path": "NAVIGATION.md",
+        "open_when": "Use to find the latest changed artifacts and where a collaborator should open first.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:recent_changes",
+      "type": "task",
+      "label": "Recent Changes",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "recent_changes"
+      }
+    },
+    {
+      "id": "task:handoff",
+      "type": "task",
+      "label": "Handoff",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "handoff"
+      }
+    },
+    {
+      "id": "lane:agent_rules",
+      "type": "lane",
+      "label": "Agent Rules and Evidence Boundaries",
+      "subtitle": "Instruction files that define agent behavior, chapter roles, and evidence-status limits.",
+      "meta": {
+        "lane_id": "agent_rules"
+      }
+    },
+    {
+      "id": "doc:AGENTS.md",
+      "type": "document",
+      "label": "Agent Instructions",
+      "subtitle": "Codex/agent rules for thesis boundaries, evidence status, graph use, and documentation updates.",
+      "meta": {
+        "path": "AGENTS.md",
+        "open_when": "Use before editing thesis prose, citation workflows, benchmark docs, or repo navigation.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:agent_rules",
+      "type": "task",
+      "label": "Agent Rules",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "agent_rules"
+      }
+    },
+    {
+      "id": "task:chapter_boundaries",
+      "type": "task",
+      "label": "Chapter Boundaries",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "chapter_boundaries"
+      }
+    },
+    {
+      "id": "task:graph_routing",
+      "type": "task",
+      "label": "Graph Routing",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "graph_routing"
+      }
+    },
+    {
+      "id": "doc:CLAUDE.md",
+      "type": "document",
+      "label": "Claude Instructions",
+      "subtitle": "Claude Code setup, common commands, graph-routing rules, and graphify workflow notes.",
+      "meta": {
+        "path": "CLAUDE.md",
+        "open_when": "Use when aligning Claude behavior with Codex/agent behavior.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:claude_setup",
+      "type": "task",
+      "label": "Claude Setup",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "claude_setup"
+      }
+    },
+    {
+      "id": "doc:CONTEXT_SNAPSHOT.md",
+      "type": "document",
+      "label": "Context Snapshot",
+      "subtitle": "Compact current-session context and recent activity snapshot.",
+      "meta": {
+        "path": "CONTEXT_SNAPSHOT.md",
+        "open_when": "Use as quick context before deeper tracker reads.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "lane:workflow_entrypoints",
+      "type": "lane",
+      "label": "Workflow Entrypoints",
+      "subtitle": "Safe pointers to model-free, model-based, planning, and operator workflow documentation.",
+      "meta": {
+        "lane_id": "workflow_entrypoints"
+      }
+    },
+    {
+      "id": "doc:model-free_README.md",
+      "type": "document",
+      "label": "Model-Free Workflow",
+      "subtitle": "Entry point for SAC training, evaluation, runtime conventions, and model-free outputs.",
+      "meta": {
+        "path": "model-free/README.md",
+        "open_when": "Use for DRL/SAC workflow questions or before touching model-free runners.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:model_free",
+      "type": "task",
+      "label": "Model Free",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "model_free"
+      }
+    },
+    {
+      "id": "task:sac_runtime",
+      "type": "task",
+      "label": "Sac Runtime",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "sac_runtime"
+      }
+    },
+    {
+      "id": "task:workflow",
+      "type": "task",
+      "label": "Workflow",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "workflow"
+      }
+    },
+    {
+      "id": "command:python_-m_pytest_tests_test_sac_block_runtime.py_-q",
+      "type": "command",
+      "label": "python -m pytest tests/test_sac_block_runtime.py -q",
+      "subtitle": "Sanitized command reference.",
+      "meta": {
+        "command": "python -m pytest tests/test_sac_block_runtime.py -q"
+      }
+    },
+    {
+      "id": "doc:model-free_hpc_README_B2_SAC.md",
+      "type": "document",
+      "label": "Model-Free HPC Operator Guide",
+      "subtitle": "HPC operator guide for the current model-free run family.",
+      "meta": {
+        "path": "model-free/hpc/README_B2_SAC.md",
+        "open_when": "Use before preparing or interpreting cluster-side SAC jobs.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:hpc",
+      "type": "task",
+      "label": "Hpc",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "hpc"
+      }
+    },
+    {
+      "id": "task:operator_commands",
+      "type": "task",
+      "label": "Operator Commands",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "operator_commands"
+      }
+    },
+    {
+      "id": "doc:model-based_NAVIGATION.md",
+      "type": "document",
+      "label": "Model-Based Navigation",
+      "subtitle": "Entry point for optimisation baseline workflows, validation state, and result interpretation.",
+      "meta": {
+        "path": "model-based/NAVIGATION.md",
+        "open_when": "Use before changing model-based scripts or interpreting optimisation outputs.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:model_based",
+      "type": "task",
+      "label": "Model Based",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "model_based"
+      }
+    },
+    {
+      "id": "task:baseline_workflow",
+      "type": "task",
+      "label": "Baseline Workflow",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "baseline_workflow"
+      }
+    },
+    {
+      "id": "task:validation",
+      "type": "task",
+      "label": "Validation",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "validation"
+      }
+    },
+    {
+      "id": "doc:planning_PLAN.md",
+      "type": "document",
+      "label": "Planning Hub",
+      "subtitle": "Top-level planning map for active workstreams and scoped plans.",
+      "meta": {
+        "path": "planning/PLAN.md",
+        "open_when": "Use to choose the relevant plan file before making a non-trivial change.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:planning",
+      "type": "task",
+      "label": "Planning",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "planning"
+      }
+    },
+    {
+      "id": "lane:thesis_navigation",
+      "type": "lane",
+      "label": "Thesis Navigation and Citation Controls",
+      "subtitle": "Where to route thesis writing, chapter-boundary, compile, and citation-audit work.",
+      "meta": {
+        "lane_id": "thesis_navigation"
+      }
+    },
+    {
+      "id": "doc:latex_writeups_WRITEUP_NAVIGATION.md",
+      "type": "document",
+      "label": "Writeup Navigation",
+      "subtitle": "Thesis chapter map, writing status, and compile/navigation guidance.",
+      "meta": {
+        "path": "latex_writeups/WRITEUP_NAVIGATION.md",
+        "open_when": "Use before thesis prose edits or chapter-location decisions.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:thesis_writing",
+      "type": "task",
+      "label": "Thesis Writing",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "thesis_writing"
+      }
+    },
+    {
+      "id": "task:compile",
+      "type": "task",
+      "label": "Compile",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "compile"
+      }
+    },
+    {
+      "id": "doc:latex_writeups_main_document_main.tex",
+      "type": "document",
+      "label": "Main Thesis Entrypoint",
+      "subtitle": "Compile entrypoint for the thesis document.",
+      "meta": {
+        "path": "latex_writeups/main_document/main.tex",
+        "open_when": "Use only as a compile entrypoint; do not copy thesis chapter prose into public graph outputs.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "command:latexmk_-pdf_-interaction_nonstopmode_-halt-on-error_main.tex",
+      "type": "command",
+      "label": "latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex",
+      "subtitle": "Sanitized command reference.",
+      "meta": {
+        "command": "latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex"
+      }
+    },
+    {
+      "id": "doc:CITATION_AUDIT_MASTER.md",
+      "type": "document",
+      "label": "Citation Audit Master",
+      "subtitle": "Root citation-audit tracking file required when citation keys change.",
+      "meta": {
+        "path": "CITATION_AUDIT_MASTER.md",
+        "open_when": "Use whenever a citation key is added, removed, or replaced.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:citation_audit",
+      "type": "task",
+      "label": "Citation Audit",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "citation_audit"
+      }
+    },
+    {
+      "id": "lane:graph_tooling",
+      "type": "lane",
+      "label": "Graph Tooling and MCP Routing",
+      "subtitle": "MCP server wiring, local graph gates, and generated graph artifacts.",
+      "meta": {
+        "lane_id": "graph_tooling"
+      }
+    },
+    {
+      "id": "doc:.mcp.json",
+      "type": "document",
+      "label": "MCP Server Map",
+      "subtitle": "Local MCP configuration for project graph servers.",
+      "meta": {
+        "path": ".mcp.json",
+        "open_when": "Use to verify which graph servers should be available to agents.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:mcp",
+      "type": "task",
+      "label": "Mcp",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "mcp"
+      }
+    },
+    {
+      "id": "task:tooling",
+      "type": "task",
+      "label": "Tooling",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "tooling"
+      }
+    },
+    {
+      "id": "doc:tools_graphify_pilot_queryset_policy.md",
+      "type": "document",
+      "label": "Graphify Query Policy",
+      "subtitle": "Governance policy for local graphify query sets and regression gates.",
+      "meta": {
+        "path": "tools/graphify_pilot_queryset_policy.md",
+        "open_when": "Use before changing graphify queries or citation graph gates.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:graphify",
+      "type": "task",
+      "label": "Graphify",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "graphify"
+      }
+    },
+    {
+      "id": "doc:tools_build_agent_ops_graphs.py",
+      "type": "document",
+      "label": "Agent-Ops Graph Builder",
+      "subtitle": "Builder for this sanitized agent-operations MCP graph package.",
+      "meta": {
+        "path": "tools/build_agent_ops_graphs.py",
+        "open_when": "Use when regenerating the public agent-ops graph repo.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "command:python_tools_build_agent_ops_graphs.py_--out-dir_docs_agent_ops_graphs",
+      "type": "command",
+      "label": "python tools/build_agent_ops_graphs.py --out-dir docs/agent_ops_graphs",
+      "subtitle": "Sanitized command reference.",
+      "meta": {
+        "command": "python tools/build_agent_ops_graphs.py --out-dir docs/agent_ops_graphs"
+      }
+    },
+    {
+      "id": "doc:docs_knowledge_graphs_README.md",
+      "type": "document",
+      "label": "Literature Graph README",
+      "subtitle": "Documentation for the existing literature and citation-support graph package.",
+      "meta": {
+        "path": "docs/knowledge_graphs/README.md",
+        "open_when": "Use to distinguish literature graph behavior from project-operations graph behavior.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:literature_graph",
+      "type": "task",
+      "label": "Literature Graph",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "literature_graph"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "lane:orientation",
+      "target": "doc:START_HERE.md",
+      "label": "contains"
+    },
+    {
+      "source": "task:session_start",
+      "target": "doc:START_HERE.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:status_check",
+      "target": "doc:START_HERE.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:navigation",
+      "target": "doc:START_HERE.md",
+      "label": "opens"
+    },
+    {
+      "source": "lane:orientation",
+      "target": "doc:STATUS.md",
+      "label": "contains"
+    },
+    {
+      "source": "task:status_check",
+      "target": "doc:STATUS.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:evidence_boundary",
+      "target": "doc:STATUS.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:next_steps",
+      "target": "doc:STATUS.md",
+      "label": "opens"
+    },
+    {
+      "source": "lane:orientation",
+      "target": "doc:NAVIGATION.md",
+      "label": "contains"
+    },
+    {
+      "source": "task:navigation",
+      "target": "doc:NAVIGATION.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:recent_changes",
+      "target": "doc:NAVIGATION.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:handoff",
+      "target": "doc:NAVIGATION.md",
+      "label": "opens"
+    },
+    {
+      "source": "lane:agent_rules",
+      "target": "doc:AGENTS.md",
+      "label": "contains"
+    },
+    {
+      "source": "task:agent_rules",
+      "target": "doc:AGENTS.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:chapter_boundaries",
+      "target": "doc:AGENTS.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:evidence_boundary",
+      "target": "doc:AGENTS.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:graph_routing",
+      "target": "doc:AGENTS.md",
+      "label": "opens"
+    },
+    {
+      "source": "lane:agent_rules",
+      "target": "doc:CLAUDE.md",
+      "label": "contains"
+    },
+    {
+      "source": "task:agent_rules",
+      "target": "doc:CLAUDE.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:claude_setup",
+      "target": "doc:CLAUDE.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:graph_routing",
+      "target": "doc:CLAUDE.md",
+      "label": "opens"
+    },
+    {
+      "source": "lane:agent_rules",
+      "target": "doc:CONTEXT_SNAPSHOT.md",
+      "label": "contains"
+    },
+    {
+      "source": "task:session_start",
+      "target": "doc:CONTEXT_SNAPSHOT.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:handoff",
+      "target": "doc:CONTEXT_SNAPSHOT.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:status_check",
+      "target": "doc:CONTEXT_SNAPSHOT.md",
+      "label": "opens"
+    },
+    {
+      "source": "lane:workflow_entrypoints",
+      "target": "doc:model-free_README.md",
+      "label": "contains"
+    },
+    {
+      "source": "task:model_free",
+      "target": "doc:model-free_README.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:sac_runtime",
+      "target": "doc:model-free_README.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:workflow",
+      "target": "doc:model-free_README.md",
+      "label": "opens"
+    },
+    {
+      "source": "doc:model-free_README.md",
+      "target": "command:python_-m_pytest_tests_test_sac_block_runtime.py_-q",
+      "label": "documents_command"
+    },
+    {
+      "source": "lane:workflow_entrypoints",
+      "target": "doc:model-free_hpc_README_B2_SAC.md",
+      "label": "contains"
+    },
+    {
+      "source": "task:model_free",
+      "target": "doc:model-free_hpc_README_B2_SAC.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:hpc",
+      "target": "doc:model-free_hpc_README_B2_SAC.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:operator_commands",
+      "target": "doc:model-free_hpc_README_B2_SAC.md",
+      "label": "opens"
+    },
+    {
+      "source": "lane:workflow_entrypoints",
+      "target": "doc:model-based_NAVIGATION.md",
+      "label": "contains"
+    },
+    {
+      "source": "task:model_based",
+      "target": "doc:model-based_NAVIGATION.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:baseline_workflow",
+      "target": "doc:model-based_NAVIGATION.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:validation",
+      "target": "doc:model-based_NAVIGATION.md",
+      "label": "opens"
+    },
+    {
+      "source": "lane:workflow_entrypoints",
+      "target": "doc:planning_PLAN.md",
+      "label": "contains"
+    },
+    {
+      "source": "task:planning",
+      "target": "doc:planning_PLAN.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:handoff",
+      "target": "doc:planning_PLAN.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:next_steps",
+      "target": "doc:planning_PLAN.md",
+      "label": "opens"
+    },
+    {
+      "source": "lane:thesis_navigation",
+      "target": "doc:latex_writeups_WRITEUP_NAVIGATION.md",
+      "label": "contains"
+    },
+    {
+      "source": "task:thesis_writing",
+      "target": "doc:latex_writeups_WRITEUP_NAVIGATION.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:chapter_boundaries",
+      "target": "doc:latex_writeups_WRITEUP_NAVIGATION.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:compile",
+      "target": "doc:latex_writeups_WRITEUP_NAVIGATION.md",
+      "label": "opens"
+    },
+    {
+      "source": "lane:thesis_navigation",
+      "target": "doc:latex_writeups_main_document_main.tex",
+      "label": "contains"
+    },
+    {
+      "source": "task:compile",
+      "target": "doc:latex_writeups_main_document_main.tex",
+      "label": "opens"
+    },
+    {
+      "source": "task:thesis_writing",
+      "target": "doc:latex_writeups_main_document_main.tex",
+      "label": "opens"
+    },
+    {
+      "source": "doc:latex_writeups_main_document_main.tex",
+      "target": "command:latexmk_-pdf_-interaction_nonstopmode_-halt-on-error_main.tex",
+      "label": "documents_command"
+    },
+    {
+      "source": "lane:thesis_navigation",
+      "target": "doc:CITATION_AUDIT_MASTER.md",
+      "label": "contains"
+    },
+    {
+      "source": "task:citation_audit",
+      "target": "doc:CITATION_AUDIT_MASTER.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:evidence_boundary",
+      "target": "doc:CITATION_AUDIT_MASTER.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:thesis_writing",
+      "target": "doc:CITATION_AUDIT_MASTER.md",
+      "label": "opens"
+    },
+    {
+      "source": "lane:graph_tooling",
+      "target": "doc:.mcp.json",
+      "label": "contains"
+    },
+    {
+      "source": "task:mcp",
+      "target": "doc:.mcp.json",
+      "label": "opens"
+    },
+    {
+      "source": "task:graph_routing",
+      "target": "doc:.mcp.json",
+      "label": "opens"
+    },
+    {
+      "source": "task:tooling",
+      "target": "doc:.mcp.json",
+      "label": "opens"
+    },
+    {
+      "source": "lane:graph_tooling",
+      "target": "doc:tools_graphify_pilot_queryset_policy.md",
+      "label": "contains"
+    },
+    {
+      "source": "task:graphify",
+      "target": "doc:tools_graphify_pilot_queryset_policy.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:citation_audit",
+      "target": "doc:tools_graphify_pilot_queryset_policy.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:tooling",
+      "target": "doc:tools_graphify_pilot_queryset_policy.md",
+      "label": "opens"
+    },
+    {
+      "source": "lane:graph_tooling",
+      "target": "doc:tools_build_agent_ops_graphs.py",
+      "label": "contains"
+    },
+    {
+      "source": "task:mcp",
+      "target": "doc:tools_build_agent_ops_graphs.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:graph_routing",
+      "target": "doc:tools_build_agent_ops_graphs.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:tooling",
+      "target": "doc:tools_build_agent_ops_graphs.py",
+      "label": "opens"
+    },
+    {
+      "source": "doc:tools_build_agent_ops_graphs.py",
+      "target": "command:python_tools_build_agent_ops_graphs.py_--out-dir_docs_agent_ops_graphs",
+      "label": "documents_command"
+    },
+    {
+      "source": "lane:graph_tooling",
+      "target": "doc:docs_knowledge_graphs_README.md",
+      "label": "contains"
+    },
+    {
+      "source": "task:mcp",
+      "target": "doc:docs_knowledge_graphs_README.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:literature_graph",
+      "target": "doc:docs_knowledge_graphs_README.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:graph_routing",
+      "target": "doc:docs_knowledge_graphs_README.md",
+      "label": "opens"
+    }
+  ]
+}

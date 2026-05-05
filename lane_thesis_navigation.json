@@ -1,0 +1,150 @@
+{
+  "title": "Thesis Navigation and Citation Controls",
+  "description": "Where to route thesis writing, chapter-boundary, compile, and citation-audit work.",
+  "nodes": [
+    {
+      "id": "task:evidence_boundary",
+      "type": "task",
+      "label": "Evidence Boundary",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "evidence_boundary"
+      }
+    },
+    {
+      "id": "task:chapter_boundaries",
+      "type": "task",
+      "label": "Chapter Boundaries",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "chapter_boundaries"
+      }
+    },
+    {
+      "id": "lane:thesis_navigation",
+      "type": "lane",
+      "label": "Thesis Navigation and Citation Controls",
+      "subtitle": "Where to route thesis writing, chapter-boundary, compile, and citation-audit work.",
+      "meta": {
+        "lane_id": "thesis_navigation"
+      }
+    },
+    {
+      "id": "doc:latex_writeups_WRITEUP_NAVIGATION.md",
+      "type": "document",
+      "label": "Writeup Navigation",
+      "subtitle": "Thesis chapter map, writing status, and compile/navigation guidance.",
+      "meta": {
+        "path": "latex_writeups/WRITEUP_NAVIGATION.md",
+        "open_when": "Use before thesis prose edits or chapter-location decisions.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:thesis_writing",
+      "type": "task",
+      "label": "Thesis Writing",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "thesis_writing"
+      }
+    },
+    {
+      "id": "task:compile",
+      "type": "task",
+      "label": "Compile",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "compile"
+      }
+    },
+    {
+      "id": "doc:latex_writeups_main_document_main.tex",
+      "type": "document",
+      "label": "Main Thesis Entrypoint",
+      "subtitle": "Compile entrypoint for the thesis document.",
+      "meta": {
+        "path": "latex_writeups/main_document/main.tex",
+        "open_when": "Use only as a compile entrypoint; do not copy thesis chapter prose into public graph outputs.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "doc:CITATION_AUDIT_MASTER.md",
+      "type": "document",
+      "label": "Citation Audit Master",
+      "subtitle": "Root citation-audit tracking file required when citation keys change.",
+      "meta": {
+        "path": "CITATION_AUDIT_MASTER.md",
+        "open_when": "Use whenever a citation key is added, removed, or replaced.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:citation_audit",
+      "type": "task",
+      "label": "Citation Audit",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "citation_audit"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "lane:thesis_navigation",
+      "target": "doc:latex_writeups_WRITEUP_NAVIGATION.md",
+      "label": "contains"
+    },
+    {
+      "source": "lane:thesis_navigation",
+      "target": "doc:latex_writeups_main_document_main.tex",
+      "label": "contains"
+    },
+    {
+      "source": "lane:thesis_navigation",
+      "target": "doc:CITATION_AUDIT_MASTER.md",
+      "label": "contains"
+    },
+    {
+      "source": "task:thesis_writing",
+      "target": "doc:latex_writeups_WRITEUP_NAVIGATION.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:chapter_boundaries",
+      "target": "doc:latex_writeups_WRITEUP_NAVIGATION.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:compile",
+      "target": "doc:latex_writeups_WRITEUP_NAVIGATION.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:compile",
+      "target": "doc:latex_writeups_main_document_main.tex",
+      "label": "opens"
+    },
+    {
+      "source": "task:thesis_writing",
+      "target": "doc:latex_writeups_main_document_main.tex",
+      "label": "opens"
+    },
+    {
+      "source": "task:citation_audit",
+      "target": "doc:CITATION_AUDIT_MASTER.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:evidence_boundary",
+      "target": "doc:CITATION_AUDIT_MASTER.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:thesis_writing",
+      "target": "doc:CITATION_AUDIT_MASTER.md",
+      "label": "opens"
+    }
+  ]
+}

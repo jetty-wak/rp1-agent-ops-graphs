@@ -1,0 +1,132 @@
+# RP1 Agent-Ops Graphs
+
+Sanitized project-operation graph package for RP1 agents and Claude Code.
+
+## Nodes
+
+- **Orientation and Current State**: Where agents should start for current status, next steps, and repository navigation.
+- **Start Here** (`START_HERE.md`): First-stop orientation for collaborators and agents.
+- **Session Start**: Project-operation task route.
+- **Status Check**: Project-operation task route.
+- **Navigation**: Project-operation task route.
+- **Live Status** (`STATUS.md`): Current project state, blockers, evidence summary, and compile gate.
+- **Evidence Boundary**: Project-operation task route.
+- **Next Steps**: Project-operation task route.
+- **Navigation Cheatsheet** (`NAVIGATION.md`): Recent edit map and pointers to affected files or outputs.
+- **Recent Changes**: Project-operation task route.
+- **Handoff**: Project-operation task route.
+- **Agent Rules and Evidence Boundaries**: Instruction files that define agent behavior, chapter roles, and evidence-status limits.
+- **Agent Instructions** (`AGENTS.md`): Codex/agent rules for thesis boundaries, evidence status, graph use, and documentation updates.
+- **Agent Rules**: Project-operation task route.
+- **Chapter Boundaries**: Project-operation task route.
+- **Graph Routing**: Project-operation task route.
+- **Claude Instructions** (`CLAUDE.md`): Claude Code setup, common commands, graph-routing rules, and graphify workflow notes.
+- **Claude Setup**: Project-operation task route.
+- **Context Snapshot** (`CONTEXT_SNAPSHOT.md`): Compact current-session context and recent activity snapshot.
+- **Workflow Entrypoints**: Safe pointers to model-free, model-based, planning, and operator workflow documentation.
+- **Model-Free Workflow** (`model-free/README.md`): Entry point for SAC training, evaluation, runtime conventions, and model-free outputs.
+- **Model Free**: Project-operation task route.
+- **Sac Runtime**: Project-operation task route.
+- **Workflow**: Project-operation task route.
+- **python -m pytest tests/test_sac_block_runtime.py -q**: Sanitized command reference.
+- **Model-Free HPC Operator Guide** (`model-free/hpc/README_B2_SAC.md`): HPC operator guide for the current model-free run family.
+- **Hpc**: Project-operation task route.
+- **Operator Commands**: Project-operation task route.
+- **Model-Based Navigation** (`model-based/NAVIGATION.md`): Entry point for optimisation baseline workflows, validation state, and result interpretation.
+- **Model Based**: Project-operation task route.
+- **Baseline Workflow**: Project-operation task route.
+- **Validation**: Project-operation task route.
+- **Planning Hub** (`planning/PLAN.md`): Top-level planning map for active workstreams and scoped plans.
+- **Planning**: Project-operation task route.
+- **Thesis Navigation and Citation Controls**: Where to route thesis writing, chapter-boundary, compile, and citation-audit work.
+- **Writeup Navigation** (`latex_writeups/WRITEUP_NAVIGATION.md`): Thesis chapter map, writing status, and compile/navigation guidance.
+- **Thesis Writing**: Project-operation task route.
+- **Compile**: Project-operation task route.
+- **Main Thesis Entrypoint** (`latex_writeups/main_document/main.tex`): Compile entrypoint for the thesis document.
+- **latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex**: Sanitized command reference.
+- **Citation Audit Master** (`CITATION_AUDIT_MASTER.md`): Root citation-audit tracking file required when citation keys change.
+- **Citation Audit**: Project-operation task route.
+- **Graph Tooling and MCP Routing**: MCP server wiring, local graph gates, and generated graph artifacts.
+- **MCP Server Map** (`.mcp.json`): Local MCP configuration for project graph servers.
+- **Mcp**: Project-operation task route.
+- **Tooling**: Project-operation task route.
+- **Graphify Query Policy** (`tools/graphify_pilot_queryset_policy.md`): Governance policy for local graphify query sets and regression gates.
+- **Graphify**: Project-operation task route.
+- **Agent-Ops Graph Builder** (`tools/build_agent_ops_graphs.py`): Builder for this sanitized agent-operations MCP graph package.
+- **python tools/build_agent_ops_graphs.py --out-dir docs/agent_ops_graphs**: Sanitized command reference.
+- **Literature Graph README** (`docs/knowledge_graphs/README.md`): Documentation for the existing literature and citation-support graph package.
+- **Literature Graph**: Project-operation task route.
+
+## Edges
+
+- `lane:orientation` -contains-> `doc:START_HERE.md`
+- `task:session_start` -opens-> `doc:START_HERE.md`
+- `task:status_check` -opens-> `doc:START_HERE.md`
+- `task:navigation` -opens-> `doc:START_HERE.md`
+- `lane:orientation` -contains-> `doc:STATUS.md`
+- `task:status_check` -opens-> `doc:STATUS.md`
+- `task:evidence_boundary` -opens-> `doc:STATUS.md`
+- `task:next_steps` -opens-> `doc:STATUS.md`
+- `lane:orientation` -contains-> `doc:NAVIGATION.md`
+- `task:navigation` -opens-> `doc:NAVIGATION.md`
+- `task:recent_changes` -opens-> `doc:NAVIGATION.md`
+- `task:handoff` -opens-> `doc:NAVIGATION.md`
+- `lane:agent_rules` -contains-> `doc:AGENTS.md`
+- `task:agent_rules` -opens-> `doc:AGENTS.md`
+- `task:chapter_boundaries` -opens-> `doc:AGENTS.md`
+- `task:evidence_boundary` -opens-> `doc:AGENTS.md`
+- `task:graph_routing` -opens-> `doc:AGENTS.md`
+- `lane:agent_rules` -contains-> `doc:CLAUDE.md`
+- `task:agent_rules` -opens-> `doc:CLAUDE.md`
+- `task:claude_setup` -opens-> `doc:CLAUDE.md`
+- `task:graph_routing` -opens-> `doc:CLAUDE.md`
+- `lane:agent_rules` -contains-> `doc:CONTEXT_SNAPSHOT.md`
+- `task:session_start` -opens-> `doc:CONTEXT_SNAPSHOT.md`
+- `task:handoff` -opens-> `doc:CONTEXT_SNAPSHOT.md`
+- `task:status_check` -opens-> `doc:CONTEXT_SNAPSHOT.md`
+- `lane:workflow_entrypoints` -contains-> `doc:model-free_README.md`
+- `task:model_free` -opens-> `doc:model-free_README.md`
+- `task:sac_runtime` -opens-> `doc:model-free_README.md`
+- `task:workflow` -opens-> `doc:model-free_README.md`
+- `doc:model-free_README.md` -documents_command-> `command:python_-m_pytest_tests_test_sac_block_runtime.py_-q`
+- `lane:workflow_entrypoints` -contains-> `doc:model-free_hpc_README_B2_SAC.md`
+- `task:model_free` -opens-> `doc:model-free_hpc_README_B2_SAC.md`
+- `task:hpc` -opens-> `doc:model-free_hpc_README_B2_SAC.md`
+- `task:operator_commands` -opens-> `doc:model-free_hpc_README_B2_SAC.md`
+- `lane:workflow_entrypoints` -contains-> `doc:model-based_NAVIGATION.md`
+- `task:model_based` -opens-> `doc:model-based_NAVIGATION.md`
+- `task:baseline_workflow` -opens-> `doc:model-based_NAVIGATION.md`
+- `task:validation` -opens-> `doc:model-based_NAVIGATION.md`
+- `lane:workflow_entrypoints` -contains-> `doc:planning_PLAN.md`
+- `task:planning` -opens-> `doc:planning_PLAN.md`
+- `task:handoff` -opens-> `doc:planning_PLAN.md`
+- `task:next_steps` -opens-> `doc:planning_PLAN.md`
+- `lane:thesis_navigation` -contains-> `doc:latex_writeups_WRITEUP_NAVIGATION.md`
+- `task:thesis_writing` -opens-> `doc:latex_writeups_WRITEUP_NAVIGATION.md`
+- `task:chapter_boundaries` -opens-> `doc:latex_writeups_WRITEUP_NAVIGATION.md`
+- `task:compile` -opens-> `doc:latex_writeups_WRITEUP_NAVIGATION.md`
+- `lane:thesis_navigation` -contains-> `doc:latex_writeups_main_document_main.tex`
+- `task:compile` -opens-> `doc:latex_writeups_main_document_main.tex`
+- `task:thesis_writing` -opens-> `doc:latex_writeups_main_document_main.tex`
+- `doc:latex_writeups_main_document_main.tex` -documents_command-> `command:latexmk_-pdf_-interaction_nonstopmode_-halt-on-error_main.tex`
+- `lane:thesis_navigation` -contains-> `doc:CITATION_AUDIT_MASTER.md`
+- `task:citation_audit` -opens-> `doc:CITATION_AUDIT_MASTER.md`
+- `task:evidence_boundary` -opens-> `doc:CITATION_AUDIT_MASTER.md`
+- `task:thesis_writing` -opens-> `doc:CITATION_AUDIT_MASTER.md`
+- `lane:graph_tooling` -contains-> `doc:.mcp.json`
+- `task:mcp` -opens-> `doc:.mcp.json`
+- `task:graph_routing` -opens-> `doc:.mcp.json`
+- `task:tooling` -opens-> `doc:.mcp.json`
+- `lane:graph_tooling` -contains-> `doc:tools_graphify_pilot_queryset_policy.md`
+- `task:graphify` -opens-> `doc:tools_graphify_pilot_queryset_policy.md`
+- `task:citation_audit` -opens-> `doc:tools_graphify_pilot_queryset_policy.md`
+- `task:tooling` -opens-> `doc:tools_graphify_pilot_queryset_policy.md`
+- `lane:graph_tooling` -contains-> `doc:tools_build_agent_ops_graphs.py`
+- `task:mcp` -opens-> `doc:tools_build_agent_ops_graphs.py`
+- `task:graph_routing` -opens-> `doc:tools_build_agent_ops_graphs.py`
+- `task:tooling` -opens-> `doc:tools_build_agent_ops_graphs.py`
+- `doc:tools_build_agent_ops_graphs.py` -documents_command-> `command:python_tools_build_agent_ops_graphs.py_--out-dir_docs_agent_ops_graphs`
+- `lane:graph_tooling` -contains-> `doc:docs_knowledge_graphs_README.md`
+- `task:mcp` -opens-> `doc:docs_knowledge_graphs_README.md`
+- `task:literature_graph` -opens-> `doc:docs_knowledge_graphs_README.md`
+- `task:graph_routing` -opens-> `doc:docs_knowledge_graphs_README.md`

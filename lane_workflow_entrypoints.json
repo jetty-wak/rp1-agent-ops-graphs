@@ -1,0 +1,240 @@
+{
+  "title": "Workflow Entrypoints",
+  "description": "Safe pointers to model-free, model-based, planning, and operator workflow documentation.",
+  "nodes": [
+    {
+      "id": "task:next_steps",
+      "type": "task",
+      "label": "Next Steps",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "next_steps"
+      }
+    },
+    {
+      "id": "task:handoff",
+      "type": "task",
+      "label": "Handoff",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "handoff"
+      }
+    },
+    {
+      "id": "lane:workflow_entrypoints",
+      "type": "lane",
+      "label": "Workflow Entrypoints",
+      "subtitle": "Safe pointers to model-free, model-based, planning, and operator workflow documentation.",
+      "meta": {
+        "lane_id": "workflow_entrypoints"
+      }
+    },
+    {
+      "id": "doc:model-free_README.md",
+      "type": "document",
+      "label": "Model-Free Workflow",
+      "subtitle": "Entry point for SAC training, evaluation, runtime conventions, and model-free outputs.",
+      "meta": {
+        "path": "model-free/README.md",
+        "open_when": "Use for DRL/SAC workflow questions or before touching model-free runners.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:model_free",
+      "type": "task",
+      "label": "Model Free",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "model_free"
+      }
+    },
+    {
+      "id": "task:sac_runtime",
+      "type": "task",
+      "label": "Sac Runtime",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "sac_runtime"
+      }
+    },
+    {
+      "id": "task:workflow",
+      "type": "task",
+      "label": "Workflow",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "workflow"
+      }
+    },
+    {
+      "id": "doc:model-free_hpc_README_B2_SAC.md",
+      "type": "document",
+      "label": "Model-Free HPC Operator Guide",
+      "subtitle": "HPC operator guide for the current model-free run family.",
+      "meta": {
+        "path": "model-free/hpc/README_B2_SAC.md",
+        "open_when": "Use before preparing or interpreting cluster-side SAC jobs.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:hpc",
+      "type": "task",
+      "label": "Hpc",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "hpc"
+      }
+    },
+    {
+      "id": "task:operator_commands",
+      "type": "task",
+      "label": "Operator Commands",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "operator_commands"
+      }
+    },
+    {
+      "id": "doc:model-based_NAVIGATION.md",
+      "type": "document",
+      "label": "Model-Based Navigation",
+      "subtitle": "Entry point for optimisation baseline workflows, validation state, and result interpretation.",
+      "meta": {
+        "path": "model-based/NAVIGATION.md",
+        "open_when": "Use before changing model-based scripts or interpreting optimisation outputs.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:model_based",
+      "type": "task",
+      "label": "Model Based",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "model_based"
+      }
+    },
+    {
+      "id": "task:baseline_workflow",
+      "type": "task",
+      "label": "Baseline Workflow",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "baseline_workflow"
+      }
+    },
+    {
+      "id": "task:validation",
+      "type": "task",
+      "label": "Validation",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "validation"
+      }
+    },
+    {
+      "id": "doc:planning_PLAN.md",
+      "type": "document",
+      "label": "Planning Hub",
+      "subtitle": "Top-level planning map for active workstreams and scoped plans.",
+      "meta": {
+        "path": "planning/PLAN.md",
+        "open_when": "Use to choose the relevant plan file before making a non-trivial change.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:planning",
+      "type": "task",
+      "label": "Planning",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "planning"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "lane:workflow_entrypoints",
+      "target": "doc:model-free_README.md",
+      "label": "contains"
+    },
+    {
+      "source": "lane:workflow_entrypoints",
+      "target": "doc:model-free_hpc_README_B2_SAC.md",
+      "label": "contains"
+    },
+    {
+      "source": "lane:workflow_entrypoints",
+      "target": "doc:model-based_NAVIGATION.md",
+      "label": "contains"
+    },
+    {
+      "source": "lane:workflow_entrypoints",
+      "target": "doc:planning_PLAN.md",
+      "label": "contains"
+    },
+    {
+      "source": "task:model_free",
+      "target": "doc:model-free_README.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:sac_runtime",
+      "target": "doc:model-free_README.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:workflow",
+      "target": "doc:model-free_README.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:model_free",
+      "target": "doc:model-free_hpc_README_B2_SAC.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:hpc",
+      "target": "doc:model-free_hpc_README_B2_SAC.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:operator_commands",
+      "target": "doc:model-free_hpc_README_B2_SAC.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:model_based",
+      "target": "doc:model-based_NAVIGATION.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:baseline_workflow",
+      "target": "doc:model-based_NAVIGATION.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:validation",
+      "target": "doc:model-based_NAVIGATION.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:planning",
+      "target": "doc:planning_PLAN.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:handoff",
+      "target": "doc:planning_PLAN.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:next_steps",
+      "target": "doc:planning_PLAN.md",
+      "label": "opens"
+    }
+  ]
+}

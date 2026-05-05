@@ -1,0 +1,51 @@
+{
+  "title": "RP1 Agent-Ops Graphs",
+  "privacy_boundary": "Public derived graph: includes curated roles, safe relative paths, task routing, and command references; excludes raw thesis prose, raw data, logs, archives, copied external repositories, secrets, and private paths.",
+  "artifacts": {
+    "lanes": [
+      {
+        "lane_id": "orientation",
+        "title": "Orientation and Current State",
+        "json": "lane_orientation.json",
+        "md": "lane_orientation.md",
+        "html": "lane_orientation.html"
+      },
+      {
+        "lane_id": "agent_rules",
+        "title": "Agent Rules and Evidence Boundaries",
+        "json": "lane_agent_rules.json",
+        "md": "lane_agent_rules.md",
+        "html": "lane_agent_rules.html"
+      },
+      {
+        "lane_id": "workflow_entrypoints",
+        "title": "Workflow Entrypoints",
+        "json": "lane_workflow_entrypoints.json",
+        "md": "lane_workflow_entrypoints.md",
+        "html": "lane_workflow_entrypoints.html"
+      },
+      {
+        "lane_id": "thesis_navigation",
+        "title": "Thesis Navigation and Citation Controls",
+        "json": "lane_thesis_navigation.json",
+        "md": "lane_thesis_navigation.md",
+        "html": "lane_thesis_navigation.html"
+      },
+      {
+        "lane_id": "graph_tooling",
+        "title": "Graph Tooling and MCP Routing",
+        "json": "lane_graph_tooling.json",
+        "md": "lane_graph_tooling.md",
+        "html": "lane_graph_tooling.html"
+      }
+    ],
+    "full_graph": {
+      "json": "agent_ops_graph.json",
+      "md": "agent_ops_graph.md",
+      "html": "agent_ops_graph.html"
+    },
+    "manifest": "manifest.json",
+    "readme": "README.md",
+    "index": "INDEX.md"
+  }
+}

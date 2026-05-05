@@ -1,0 +1,187 @@
+{
+  "title": "Agent Rules and Evidence Boundaries",
+  "description": "Instruction files that define agent behavior, chapter roles, and evidence-status limits.",
+  "nodes": [
+    {
+      "id": "task:session_start",
+      "type": "task",
+      "label": "Session Start",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "session_start"
+      }
+    },
+    {
+      "id": "task:status_check",
+      "type": "task",
+      "label": "Status Check",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "status_check"
+      }
+    },
+    {
+      "id": "task:evidence_boundary",
+      "type": "task",
+      "label": "Evidence Boundary",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "evidence_boundary"
+      }
+    },
+    {
+      "id": "task:handoff",
+      "type": "task",
+      "label": "Handoff",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "handoff"
+      }
+    },
+    {
+      "id": "lane:agent_rules",
+      "type": "lane",
+      "label": "Agent Rules and Evidence Boundaries",
+      "subtitle": "Instruction files that define agent behavior, chapter roles, and evidence-status limits.",
+      "meta": {
+        "lane_id": "agent_rules"
+      }
+    },
+    {
+      "id": "doc:AGENTS.md",
+      "type": "document",
+      "label": "Agent Instructions",
+      "subtitle": "Codex/agent rules for thesis boundaries, evidence status, graph use, and documentation updates.",
+      "meta": {
+        "path": "AGENTS.md",
+        "open_when": "Use before editing thesis prose, citation workflows, benchmark docs, or repo navigation.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:agent_rules",
+      "type": "task",
+      "label": "Agent Rules",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "agent_rules"
+      }
+    },
+    {
+      "id": "task:chapter_boundaries",
+      "type": "task",
+      "label": "Chapter Boundaries",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "chapter_boundaries"
+      }
+    },
+    {
+      "id": "task:graph_routing",
+      "type": "task",
+      "label": "Graph Routing",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "graph_routing"
+      }
+    },
+    {
+      "id": "doc:CLAUDE.md",
+      "type": "document",
+      "label": "Claude Instructions",
+      "subtitle": "Claude Code setup, common commands, graph-routing rules, and graphify workflow notes.",
+      "meta": {
+        "path": "CLAUDE.md",
+        "open_when": "Use when aligning Claude behavior with Codex/agent behavior.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:claude_setup",
+      "type": "task",
+      "label": "Claude Setup",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "claude_setup"
+      }
+    },
+    {
+      "id": "doc:CONTEXT_SNAPSHOT.md",
+      "type": "document",
+      "label": "Context Snapshot",
+      "subtitle": "Compact current-session context and recent activity snapshot.",
+      "meta": {
+        "path": "CONTEXT_SNAPSHOT.md",
+        "open_when": "Use as quick context before deeper tracker reads.",
+        "exists_in_private_repo": true
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "lane:agent_rules",
+      "target": "doc:AGENTS.md",
+      "label": "contains"
+    },
+    {
+      "source": "lane:agent_rules",
+      "target": "doc:CLAUDE.md",
+      "label": "contains"
+    },
+    {
+      "source": "lane:agent_rules",
+      "target": "doc:CONTEXT_SNAPSHOT.md",
+      "label": "contains"
+    },
+    {
+      "source": "task:agent_rules",
+      "target": "doc:AGENTS.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:chapter_boundaries",
+      "target": "doc:AGENTS.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:evidence_boundary",
+      "target": "doc:AGENTS.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:graph_routing",
+      "target": "doc:AGENTS.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:agent_rules",
+      "target": "doc:CLAUDE.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:claude_setup",
+      "target": "doc:CLAUDE.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:graph_routing",
+      "target": "doc:CLAUDE.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:session_start",
+      "target": "doc:CONTEXT_SNAPSHOT.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:handoff",
+      "target": "doc:CONTEXT_SNAPSHOT.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:status_check",
+      "target": "doc:CONTEXT_SNAPSHOT.md",
+      "label": "opens"
+    }
+  ]
+}

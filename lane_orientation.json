@@ -1,0 +1,173 @@
+{
+  "title": "Orientation and Current State",
+  "description": "Where agents should start for current status, next steps, and repository navigation.",
+  "nodes": [
+    {
+      "id": "lane:orientation",
+      "type": "lane",
+      "label": "Orientation and Current State",
+      "subtitle": "Where agents should start for current status, next steps, and repository navigation.",
+      "meta": {
+        "lane_id": "orientation"
+      }
+    },
+    {
+      "id": "doc:START_HERE.md",
+      "type": "document",
+      "label": "Start Here",
+      "subtitle": "First-stop orientation for collaborators and agents.",
+      "meta": {
+        "path": "START_HERE.md",
+        "open_when": "Use at the beginning of a session to locate the live status and navigation docs.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:session_start",
+      "type": "task",
+      "label": "Session Start",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "session_start"
+      }
+    },
+    {
+      "id": "task:status_check",
+      "type": "task",
+      "label": "Status Check",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "status_check"
+      }
+    },
+    {
+      "id": "task:navigation",
+      "type": "task",
+      "label": "Navigation",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "navigation"
+      }
+    },
+    {
+      "id": "doc:STATUS.md",
+      "type": "document",
+      "label": "Live Status",
+      "subtitle": "Current project state, blockers, evidence summary, and compile gate.",
+      "meta": {
+        "path": "STATUS.md",
+        "open_when": "Use for status/progress questions before scanning long progress logs.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:evidence_boundary",
+      "type": "task",
+      "label": "Evidence Boundary",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "evidence_boundary"
+      }
+    },
+    {
+      "id": "task:next_steps",
+      "type": "task",
+      "label": "Next Steps",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "next_steps"
+      }
+    },
+    {
+      "id": "doc:NAVIGATION.md",
+      "type": "document",
+      "label": "Navigation Cheatsheet",
+      "subtitle": "Recent edit map and pointers to affected files or outputs.",
+      "meta": {
+        "path": "NAVIGATION.md",
+        "open_when": "Use to find the latest changed artifacts and where a collaborator should open first.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:recent_changes",
+      "type": "task",
+      "label": "Recent Changes",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "recent_changes"
+      }
+    },
+    {
+      "id": "task:handoff",
+      "type": "task",
+      "label": "Handoff",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "handoff"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "lane:orientation",
+      "target": "doc:START_HERE.md",
+      "label": "contains"
+    },
+    {
+      "source": "lane:orientation",
+      "target": "doc:STATUS.md",
+      "label": "contains"
+    },
+    {
+      "source": "lane:orientation",
+      "target": "doc:NAVIGATION.md",
+      "label": "contains"
+    },
+    {
+      "source": "task:session_start",
+      "target": "doc:START_HERE.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:status_check",
+      "target": "doc:START_HERE.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:navigation",
+      "target": "doc:START_HERE.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:status_check",
+      "target": "doc:STATUS.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:evidence_boundary",
+      "target": "doc:STATUS.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:next_steps",
+      "target": "doc:STATUS.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:navigation",
+      "target": "doc:NAVIGATION.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:recent_changes",
+      "target": "doc:NAVIGATION.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:handoff",
+      "target": "doc:NAVIGATION.md",
+      "label": "opens"
+    }
+  ]
+}

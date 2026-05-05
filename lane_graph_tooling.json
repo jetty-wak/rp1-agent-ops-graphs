@@ -1,0 +1,195 @@
+{
+  "title": "Graph Tooling and MCP Routing",
+  "description": "MCP server wiring, local graph gates, and generated graph artifacts.",
+  "nodes": [
+    {
+      "id": "task:graph_routing",
+      "type": "task",
+      "label": "Graph Routing",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "graph_routing"
+      }
+    },
+    {
+      "id": "task:citation_audit",
+      "type": "task",
+      "label": "Citation Audit",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "citation_audit"
+      }
+    },
+    {
+      "id": "lane:graph_tooling",
+      "type": "lane",
+      "label": "Graph Tooling and MCP Routing",
+      "subtitle": "MCP server wiring, local graph gates, and generated graph artifacts.",
+      "meta": {
+        "lane_id": "graph_tooling"
+      }
+    },
+    {
+      "id": "doc:.mcp.json",
+      "type": "document",
+      "label": "MCP Server Map",
+      "subtitle": "Local MCP configuration for project graph servers.",
+      "meta": {
+        "path": ".mcp.json",
+        "open_when": "Use to verify which graph servers should be available to agents.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:mcp",
+      "type": "task",
+      "label": "Mcp",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "mcp"
+      }
+    },
+    {
+      "id": "task:tooling",
+      "type": "task",
+      "label": "Tooling",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "tooling"
+      }
+    },
+    {
+      "id": "doc:tools_graphify_pilot_queryset_policy.md",
+      "type": "document",
+      "label": "Graphify Query Policy",
+      "subtitle": "Governance policy for local graphify query sets and regression gates.",
+      "meta": {
+        "path": "tools/graphify_pilot_queryset_policy.md",
+        "open_when": "Use before changing graphify queries or citation graph gates.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:graphify",
+      "type": "task",
+      "label": "Graphify",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "graphify"
+      }
+    },
+    {
+      "id": "doc:tools_build_agent_ops_graphs.py",
+      "type": "document",
+      "label": "Agent-Ops Graph Builder",
+      "subtitle": "Builder for this sanitized agent-operations MCP graph package.",
+      "meta": {
+        "path": "tools/build_agent_ops_graphs.py",
+        "open_when": "Use when regenerating the public agent-ops graph repo.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "doc:docs_knowledge_graphs_README.md",
+      "type": "document",
+      "label": "Literature Graph README",
+      "subtitle": "Documentation for the existing literature and citation-support graph package.",
+      "meta": {
+        "path": "docs/knowledge_graphs/README.md",
+        "open_when": "Use to distinguish literature graph behavior from project-operations graph behavior.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:literature_graph",
+      "type": "task",
+      "label": "Literature Graph",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "literature_graph"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "lane:graph_tooling",
+      "target": "doc:.mcp.json",
+      "label": "contains"
+    },
+    {
+      "source": "lane:graph_tooling",
+      "target": "doc:tools_graphify_pilot_queryset_policy.md",
+      "label": "contains"
+    },
+    {
+      "source": "lane:graph_tooling",
+      "target": "doc:tools_build_agent_ops_graphs.py",
+      "label": "contains"
+    },
+    {
+      "source": "lane:graph_tooling",
+      "target": "doc:docs_knowledge_graphs_README.md",
+      "label": "contains"
+    },
+    {
+      "source": "task:mcp",
+      "target": "doc:.mcp.json",
+      "label": "opens"
+    },
+    {
+      "source": "task:graph_routing",
+      "target": "doc:.mcp.json",
+      "label": "opens"
+    },
+    {
+      "source": "task:tooling",
+      "target": "doc:.mcp.json",
+      "label": "opens"
+    },
+    {
+      "source": "task:graphify",
+      "target": "doc:tools_graphify_pilot_queryset_policy.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:citation_audit",
+      "target": "doc:tools_graphify_pilot_queryset_policy.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:tooling",
+      "target": "doc:tools_graphify_pilot_queryset_policy.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:mcp",
+      "target": "doc:tools_build_agent_ops_graphs.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:graph_routing",
+      "target": "doc:tools_build_agent_ops_graphs.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:tooling",
+      "target": "doc:tools_build_agent_ops_graphs.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:mcp",
+      "target": "doc:docs_knowledge_graphs_README.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:literature_graph",
+      "target": "doc:docs_knowledge_graphs_README.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:graph_routing",
+      "target": "doc:docs_knowledge_graphs_README.md",
+      "label": "opens"
+    }
+  ]
+}
