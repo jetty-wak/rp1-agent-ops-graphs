@@ -38,6 +38,23 @@ Sanitized project-operation graph package for RP1 agents and Claude Code.
 - **Validation**: Project-operation task route.
 - **Planning Hub** (`planning/PLAN.md`): Top-level planning map for active workstreams and scoped plans.
 - **Planning**: Project-operation task route.
+- **Code and Script Entrypoints**: Safe pointers to high-level scripts and tests that agents should inspect before code changes.
+- **SAC Runtime Router** (`model-free/sac_block_runtime.py`): Central runtime mapping for model-free block configuration, training, and evaluation behavior.
+- **Code Entrypoint**: Project-operation task route.
+- **Testing**: Project-operation task route.
+- **Comparator Evaluation Script** (`model-free/run_b2_comparator_eval.py`): Entrypoint for model-free comparator evaluation workflow.
+- **Evaluation**: Project-operation task route.
+- **python -m pytest tests/test_b2_comparator_eval.py -q**: Sanitized command reference.
+- **Pyomo Baseline Implementation** (`model-based/performance_comparison_drl_energy_miqp/baselines/pyomo_miqp_baseline.py`): Core model-based optimisation baseline implementation and solver fallback logic.
+- **Solver**: Project-operation task route.
+- **Chapter 2 Citation Graph Builder** (`tools/build_ch2_citation_graph_index.py`): Builds local citation graph index artifacts for Chapter 2 citation-audit work.
+- **Citation Audit**: Project-operation task route.
+- **Graphify**: Project-operation task route.
+- **python -m pytest tests/test_build_ch2_citation_graph_index.py -q**: Sanitized command reference.
+- **Chapter 3/4 Citation Graph Builder** (`tools/build_ch34_citation_graph_indexes.py`): Builds current-source citation graph index artifacts for Chapter 3 and Chapter 4.
+- **python -m pytest tests/test_build_ch34_citation_graph_indexes.py -q**: Sanitized command reference.
+- **Graphify Gate Wrapper** (`scripts_powershell/build/check_graphify_pilot_gate.ps1`): PowerShell gate for local graphify regression checks.
+- **Tooling**: Project-operation task route.
 - **Thesis Navigation and Citation Controls**: Where to route thesis writing, chapter-boundary, compile, and citation-audit work.
 - **Writeup Navigation** (`latex_writeups/WRITEUP_NAVIGATION.md`): Thesis chapter map, writing status, and compile/navigation guidance.
 - **Thesis Writing**: Project-operation task route.
@@ -45,17 +62,26 @@ Sanitized project-operation graph package for RP1 agents and Claude Code.
 - **Main Thesis Entrypoint** (`latex_writeups/main_document/main.tex`): Compile entrypoint for the thesis document.
 - **latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex**: Sanitized command reference.
 - **Citation Audit Master** (`CITATION_AUDIT_MASTER.md`): Root citation-audit tracking file required when citation keys change.
-- **Citation Audit**: Project-operation task route.
+- **Repository Submodules**: Safe map of active submodules and how agents should interpret them.
+- **Submodule Registry** (`.gitmodules`): Authoritative map of active Git submodules in the private repository.
+- **Submodule**: Project-operation task route.
+- **Repo Hygiene**: Project-operation task route.
+- **git submodule status --recursive**: Sanitized command reference.
+- **Literature Graph Submodule** (`docs/knowledge_graphs`): Public literature/citation-support graph package used by the Literature MCP server.
+- **Mcp**: Project-operation task route.
+- **Literature Graph**: Project-operation task route.
+- **git submodule update --remote docs/knowledge_graphs**: Sanitized command reference.
+- **Agent-Ops Graph Submodule** (`docs/agent_ops_graphs`): Public project-operation graph package used by the Agent-Ops MCP server.
+- **git submodule update --remote docs/agent_ops_graphs**: Sanitized command reference.
+- **ALPG External Submodule** (`alpg`): External profile-generation submodule used as dependency/reference material.
+- **External Dependency**: Project-operation task route.
+- **DEMKit External Submodule** (`demkit`): External energy-system tooling submodule used as dependency/reference material.
 - **Graph Tooling and MCP Routing**: MCP server wiring, local graph gates, and generated graph artifacts.
 - **MCP Server Map** (`.mcp.json`): Local MCP configuration for project graph servers.
-- **Mcp**: Project-operation task route.
-- **Tooling**: Project-operation task route.
 - **Graphify Query Policy** (`tools/graphify_pilot_queryset_policy.md`): Governance policy for local graphify query sets and regression gates.
-- **Graphify**: Project-operation task route.
 - **Agent-Ops Graph Builder** (`tools/build_agent_ops_graphs.py`): Builder for this sanitized agent-operations MCP graph package.
 - **python tools/build_agent_ops_graphs.py --out-dir docs/agent_ops_graphs**: Sanitized command reference.
 - **Literature Graph README** (`docs/knowledge_graphs/README.md`): Documentation for the existing literature and citation-support graph package.
-- **Literature Graph**: Project-operation task route.
 
 ## Edges
 
@@ -101,6 +127,40 @@ Sanitized project-operation graph package for RP1 agents and Claude Code.
 - `task:planning` -opens-> `doc:planning_PLAN.md`
 - `task:handoff` -opens-> `doc:planning_PLAN.md`
 - `task:next_steps` -opens-> `doc:planning_PLAN.md`
+- `lane:code_script_entrypoints` -contains-> `doc:model-free_sac_block_runtime.py`
+- `task:code_entrypoint` -opens-> `doc:model-free_sac_block_runtime.py`
+- `task:model_free` -opens-> `doc:model-free_sac_block_runtime.py`
+- `task:sac_runtime` -opens-> `doc:model-free_sac_block_runtime.py`
+- `task:testing` -opens-> `doc:model-free_sac_block_runtime.py`
+- `doc:model-free_sac_block_runtime.py` -documents_command-> `command:python_-m_pytest_tests_test_sac_block_runtime.py_-q`
+- `lane:code_script_entrypoints` -contains-> `doc:model-free_run_b2_comparator_eval.py`
+- `task:code_entrypoint` -opens-> `doc:model-free_run_b2_comparator_eval.py`
+- `task:model_free` -opens-> `doc:model-free_run_b2_comparator_eval.py`
+- `task:evaluation` -opens-> `doc:model-free_run_b2_comparator_eval.py`
+- `task:testing` -opens-> `doc:model-free_run_b2_comparator_eval.py`
+- `doc:model-free_run_b2_comparator_eval.py` -documents_command-> `command:python_-m_pytest_tests_test_b2_comparator_eval.py_-q`
+- `lane:code_script_entrypoints` -contains-> `doc:model-based_performance_comparison_drl_energy_miqp_baselines_pyomo_miqp_baseline.py`
+- `task:code_entrypoint` -opens-> `doc:model-based_performance_comparison_drl_energy_miqp_baselines_pyomo_miqp_baseline.py`
+- `task:model_based` -opens-> `doc:model-based_performance_comparison_drl_energy_miqp_baselines_pyomo_miqp_baseline.py`
+- `task:solver` -opens-> `doc:model-based_performance_comparison_drl_energy_miqp_baselines_pyomo_miqp_baseline.py`
+- `task:testing` -opens-> `doc:model-based_performance_comparison_drl_energy_miqp_baselines_pyomo_miqp_baseline.py`
+- `lane:code_script_entrypoints` -contains-> `doc:tools_build_ch2_citation_graph_index.py`
+- `task:code_entrypoint` -opens-> `doc:tools_build_ch2_citation_graph_index.py`
+- `task:citation_audit` -opens-> `doc:tools_build_ch2_citation_graph_index.py`
+- `task:graphify` -opens-> `doc:tools_build_ch2_citation_graph_index.py`
+- `task:testing` -opens-> `doc:tools_build_ch2_citation_graph_index.py`
+- `doc:tools_build_ch2_citation_graph_index.py` -documents_command-> `command:python_-m_pytest_tests_test_build_ch2_citation_graph_index.py_-q`
+- `lane:code_script_entrypoints` -contains-> `doc:tools_build_ch34_citation_graph_indexes.py`
+- `task:code_entrypoint` -opens-> `doc:tools_build_ch34_citation_graph_indexes.py`
+- `task:citation_audit` -opens-> `doc:tools_build_ch34_citation_graph_indexes.py`
+- `task:graphify` -opens-> `doc:tools_build_ch34_citation_graph_indexes.py`
+- `task:testing` -opens-> `doc:tools_build_ch34_citation_graph_indexes.py`
+- `doc:tools_build_ch34_citation_graph_indexes.py` -documents_command-> `command:python_-m_pytest_tests_test_build_ch34_citation_graph_indexes.py_-q`
+- `lane:code_script_entrypoints` -contains-> `doc:scripts_powershell_build_check_graphify_pilot_gate.ps1`
+- `task:code_entrypoint` -opens-> `doc:scripts_powershell_build_check_graphify_pilot_gate.ps1`
+- `task:graphify` -opens-> `doc:scripts_powershell_build_check_graphify_pilot_gate.ps1`
+- `task:tooling` -opens-> `doc:scripts_powershell_build_check_graphify_pilot_gate.ps1`
+- `task:testing` -opens-> `doc:scripts_powershell_build_check_graphify_pilot_gate.ps1`
 - `lane:thesis_navigation` -contains-> `doc:latex_writeups_WRITEUP_NAVIGATION.md`
 - `task:thesis_writing` -opens-> `doc:latex_writeups_WRITEUP_NAVIGATION.md`
 - `task:chapter_boundaries` -opens-> `doc:latex_writeups_WRITEUP_NAVIGATION.md`
@@ -113,6 +173,29 @@ Sanitized project-operation graph package for RP1 agents and Claude Code.
 - `task:citation_audit` -opens-> `doc:CITATION_AUDIT_MASTER.md`
 - `task:evidence_boundary` -opens-> `doc:CITATION_AUDIT_MASTER.md`
 - `task:thesis_writing` -opens-> `doc:CITATION_AUDIT_MASTER.md`
+- `lane:submodules` -contains-> `doc:.gitmodules`
+- `task:submodule` -opens-> `doc:.gitmodules`
+- `task:repo_hygiene` -opens-> `doc:.gitmodules`
+- `task:graph_routing` -opens-> `doc:.gitmodules`
+- `doc:.gitmodules` -documents_command-> `command:git_submodule_status_--recursive`
+- `lane:submodules` -contains-> `doc:docs_knowledge_graphs`
+- `task:submodule` -opens-> `doc:docs_knowledge_graphs`
+- `task:mcp` -opens-> `doc:docs_knowledge_graphs`
+- `task:literature_graph` -opens-> `doc:docs_knowledge_graphs`
+- `doc:docs_knowledge_graphs` -documents_command-> `command:git_submodule_update_--remote_docs_knowledge_graphs`
+- `lane:submodules` -contains-> `doc:docs_agent_ops_graphs`
+- `task:submodule` -opens-> `doc:docs_agent_ops_graphs`
+- `task:mcp` -opens-> `doc:docs_agent_ops_graphs`
+- `task:graph_routing` -opens-> `doc:docs_agent_ops_graphs`
+- `doc:docs_agent_ops_graphs` -documents_command-> `command:git_submodule_update_--remote_docs_agent_ops_graphs`
+- `lane:submodules` -contains-> `doc:alpg`
+- `task:submodule` -opens-> `doc:alpg`
+- `task:external_dependency` -opens-> `doc:alpg`
+- `task:repo_hygiene` -opens-> `doc:alpg`
+- `lane:submodules` -contains-> `doc:demkit`
+- `task:submodule` -opens-> `doc:demkit`
+- `task:external_dependency` -opens-> `doc:demkit`
+- `task:repo_hygiene` -opens-> `doc:demkit`
 - `lane:graph_tooling` -contains-> `doc:.mcp.json`
 - `task:mcp` -opens-> `doc:.mcp.json`
 - `task:graph_routing` -opens-> `doc:.mcp.json`

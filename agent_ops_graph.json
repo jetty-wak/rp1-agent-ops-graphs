@@ -22,10 +22,22 @@
       "doc_count": 4
     },
     {
+      "lane_id": "code_script_entrypoints",
+      "title": "Code and Script Entrypoints",
+      "heading": "Safe pointers to high-level scripts and tests that agents should inspect before code changes.",
+      "doc_count": 6
+    },
+    {
       "lane_id": "thesis_navigation",
       "title": "Thesis Navigation and Citation Controls",
       "heading": "Where to route thesis writing, chapter-boundary, compile, and citation-audit work.",
       "doc_count": 3
+    },
+    {
+      "lane_id": "submodules",
+      "title": "Repository Submodules",
+      "heading": "Safe map of active submodules and how agents should interpret them.",
+      "doc_count": 5
     },
     {
       "lane_id": "graph_tooling",
@@ -40,8 +52,11 @@
     "chapter_boundaries",
     "citation_audit",
     "claude_setup",
+    "code_entrypoint",
     "compile",
+    "evaluation",
     "evidence_boundary",
+    "external_dependency",
     "graph_routing",
     "graphify",
     "handoff",
@@ -55,9 +70,13 @@
     "operator_commands",
     "planning",
     "recent_changes",
+    "repo_hygiene",
     "sac_runtime",
     "session_start",
+    "solver",
     "status_check",
+    "submodule",
+    "testing",
     "thesis_writing",
     "tooling",
     "validation",
@@ -391,6 +410,171 @@
       }
     },
     {
+      "id": "lane:code_script_entrypoints",
+      "type": "lane",
+      "label": "Code and Script Entrypoints",
+      "subtitle": "Safe pointers to high-level scripts and tests that agents should inspect before code changes.",
+      "meta": {
+        "lane_id": "code_script_entrypoints"
+      }
+    },
+    {
+      "id": "doc:model-free_sac_block_runtime.py",
+      "type": "document",
+      "label": "SAC Runtime Router",
+      "subtitle": "Central runtime mapping for model-free block configuration, training, and evaluation behavior.",
+      "meta": {
+        "path": "model-free/sac_block_runtime.py",
+        "open_when": "Use before changing model-free run wiring, evaluation rows, or block-specific SAC behavior.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:code_entrypoint",
+      "type": "task",
+      "label": "Code Entrypoint",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "code_entrypoint"
+      }
+    },
+    {
+      "id": "task:testing",
+      "type": "task",
+      "label": "Testing",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "testing"
+      }
+    },
+    {
+      "id": "doc:model-free_run_b2_comparator_eval.py",
+      "type": "document",
+      "label": "Comparator Evaluation Script",
+      "subtitle": "Entrypoint for model-free comparator evaluation workflow.",
+      "meta": {
+        "path": "model-free/run_b2_comparator_eval.py",
+        "open_when": "Use before changing comparator-evaluation logic or generated aggregate outputs.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:evaluation",
+      "type": "task",
+      "label": "Evaluation",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "evaluation"
+      }
+    },
+    {
+      "id": "command:python_-m_pytest_tests_test_b2_comparator_eval.py_-q",
+      "type": "command",
+      "label": "python -m pytest tests/test_b2_comparator_eval.py -q",
+      "subtitle": "Sanitized command reference.",
+      "meta": {
+        "command": "python -m pytest tests/test_b2_comparator_eval.py -q"
+      }
+    },
+    {
+      "id": "doc:model-based_performance_comparison_drl_energy_miqp_baselines_pyomo_miqp_baseline.py",
+      "type": "document",
+      "label": "Pyomo Baseline Implementation",
+      "subtitle": "Core model-based optimisation baseline implementation and solver fallback logic.",
+      "meta": {
+        "path": "model-based/performance_comparison_drl_energy_miqp/baselines/pyomo_miqp_baseline.py",
+        "open_when": "Use before changing model-based solver behavior or baseline feasibility handling.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:solver",
+      "type": "task",
+      "label": "Solver",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "solver"
+      }
+    },
+    {
+      "id": "doc:tools_build_ch2_citation_graph_index.py",
+      "type": "document",
+      "label": "Chapter 2 Citation Graph Builder",
+      "subtitle": "Builds local citation graph index artifacts for Chapter 2 citation-audit work.",
+      "meta": {
+        "path": "tools/build_ch2_citation_graph_index.py",
+        "open_when": "Use before modifying Chapter 2 citation graph generation or citation audit outputs.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:citation_audit",
+      "type": "task",
+      "label": "Citation Audit",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "citation_audit"
+      }
+    },
+    {
+      "id": "task:graphify",
+      "type": "task",
+      "label": "Graphify",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "graphify"
+      }
+    },
+    {
+      "id": "command:python_-m_pytest_tests_test_build_ch2_citation_graph_index.py_-q",
+      "type": "command",
+      "label": "python -m pytest tests/test_build_ch2_citation_graph_index.py -q",
+      "subtitle": "Sanitized command reference.",
+      "meta": {
+        "command": "python -m pytest tests/test_build_ch2_citation_graph_index.py -q"
+      }
+    },
+    {
+      "id": "doc:tools_build_ch34_citation_graph_indexes.py",
+      "type": "document",
+      "label": "Chapter 3/4 Citation Graph Builder",
+      "subtitle": "Builds current-source citation graph index artifacts for Chapter 3 and Chapter 4.",
+      "meta": {
+        "path": "tools/build_ch34_citation_graph_indexes.py",
+        "open_when": "Use before modifying Chapter 3/4 citation graph generation or local quote verification flow.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "command:python_-m_pytest_tests_test_build_ch34_citation_graph_indexes.py_-q",
+      "type": "command",
+      "label": "python -m pytest tests/test_build_ch34_citation_graph_indexes.py -q",
+      "subtitle": "Sanitized command reference.",
+      "meta": {
+        "command": "python -m pytest tests/test_build_ch34_citation_graph_indexes.py -q"
+      }
+    },
+    {
+      "id": "doc:scripts_powershell_build_check_graphify_pilot_gate.ps1",
+      "type": "document",
+      "label": "Graphify Gate Wrapper",
+      "subtitle": "PowerShell gate for local graphify regression checks.",
+      "meta": {
+        "path": "scripts_powershell/build/check_graphify_pilot_gate.ps1",
+        "open_when": "Use before changing graphify query policy, graphify gates, or graph context tooling.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:tooling",
+      "type": "task",
+      "label": "Tooling",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "tooling"
+      }
+    },
+    {
       "id": "lane:thesis_navigation",
       "type": "lane",
       "label": "Thesis Navigation and Citation Controls",
@@ -460,12 +644,139 @@
       }
     },
     {
-      "id": "task:citation_audit",
+      "id": "lane:submodules",
+      "type": "lane",
+      "label": "Repository Submodules",
+      "subtitle": "Safe map of active submodules and how agents should interpret them.",
+      "meta": {
+        "lane_id": "submodules"
+      }
+    },
+    {
+      "id": "doc:.gitmodules",
+      "type": "document",
+      "label": "Submodule Registry",
+      "subtitle": "Authoritative map of active Git submodules in the private repository.",
+      "meta": {
+        "path": ".gitmodules",
+        "open_when": "Use before adding, removing, or refreshing submodules.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:submodule",
       "type": "task",
-      "label": "Citation Audit",
+      "label": "Submodule",
       "subtitle": "Project-operation task route.",
       "meta": {
-        "task": "citation_audit"
+        "task": "submodule"
+      }
+    },
+    {
+      "id": "task:repo_hygiene",
+      "type": "task",
+      "label": "Repo Hygiene",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "repo_hygiene"
+      }
+    },
+    {
+      "id": "command:git_submodule_status_--recursive",
+      "type": "command",
+      "label": "git submodule status --recursive",
+      "subtitle": "Sanitized command reference.",
+      "meta": {
+        "command": "git submodule status --recursive"
+      }
+    },
+    {
+      "id": "doc:docs_knowledge_graphs",
+      "type": "document",
+      "label": "Literature Graph Submodule",
+      "subtitle": "Public literature/citation-support graph package used by the Literature MCP server.",
+      "meta": {
+        "path": "docs/knowledge_graphs",
+        "open_when": "Use for literature graph refreshes or offline paper annotation lookup.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:mcp",
+      "type": "task",
+      "label": "Mcp",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "mcp"
+      }
+    },
+    {
+      "id": "task:literature_graph",
+      "type": "task",
+      "label": "Literature Graph",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "literature_graph"
+      }
+    },
+    {
+      "id": "command:git_submodule_update_--remote_docs_knowledge_graphs",
+      "type": "command",
+      "label": "git submodule update --remote docs/knowledge_graphs",
+      "subtitle": "Sanitized command reference.",
+      "meta": {
+        "command": "git submodule update --remote docs/knowledge_graphs"
+      }
+    },
+    {
+      "id": "doc:docs_agent_ops_graphs",
+      "type": "document",
+      "label": "Agent-Ops Graph Submodule",
+      "subtitle": "Public project-operation graph package used by the Agent-Ops MCP server.",
+      "meta": {
+        "path": "docs/agent_ops_graphs",
+        "open_when": "Use for project-navigation graph refreshes or offline graph lookup.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "command:git_submodule_update_--remote_docs_agent_ops_graphs",
+      "type": "command",
+      "label": "git submodule update --remote docs/agent_ops_graphs",
+      "subtitle": "Sanitized command reference.",
+      "meta": {
+        "command": "git submodule update --remote docs/agent_ops_graphs"
+      }
+    },
+    {
+      "id": "doc:alpg",
+      "type": "document",
+      "label": "ALPG External Submodule",
+      "subtitle": "External profile-generation submodule used as dependency/reference material.",
+      "meta": {
+        "path": "alpg",
+        "open_when": "Use for submodule status checks only; do not treat as project-owned source.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:external_dependency",
+      "type": "task",
+      "label": "External Dependency",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "external_dependency"
+      }
+    },
+    {
+      "id": "doc:demkit",
+      "type": "document",
+      "label": "DEMKit External Submodule",
+      "subtitle": "External energy-system tooling submodule used as dependency/reference material.",
+      "meta": {
+        "path": "demkit",
+        "open_when": "Use for submodule status checks only; do not treat as project-owned source.",
+        "exists_in_private_repo": true
       }
     },
     {
@@ -489,24 +800,6 @@
       }
     },
     {
-      "id": "task:mcp",
-      "type": "task",
-      "label": "Mcp",
-      "subtitle": "Project-operation task route.",
-      "meta": {
-        "task": "mcp"
-      }
-    },
-    {
-      "id": "task:tooling",
-      "type": "task",
-      "label": "Tooling",
-      "subtitle": "Project-operation task route.",
-      "meta": {
-        "task": "tooling"
-      }
-    },
-    {
       "id": "doc:tools_graphify_pilot_queryset_policy.md",
       "type": "document",
       "label": "Graphify Query Policy",
@@ -515,15 +808,6 @@
         "path": "tools/graphify_pilot_queryset_policy.md",
         "open_when": "Use before changing graphify queries or citation graph gates.",
         "exists_in_private_repo": true
-      }
-    },
-    {
-      "id": "task:graphify",
-      "type": "task",
-      "label": "Graphify",
-      "subtitle": "Project-operation task route.",
-      "meta": {
-        "task": "graphify"
       }
     },
     {
@@ -555,15 +839,6 @@
         "path": "docs/knowledge_graphs/README.md",
         "open_when": "Use to distinguish literature graph behavior from project-operations graph behavior.",
         "exists_in_private_repo": true
-      }
-    },
-    {
-      "id": "task:literature_graph",
-      "type": "task",
-      "label": "Literature Graph",
-      "subtitle": "Project-operation task route.",
-      "meta": {
-        "task": "literature_graph"
       }
     }
   ],
@@ -779,6 +1054,176 @@
       "label": "opens"
     },
     {
+      "source": "lane:code_script_entrypoints",
+      "target": "doc:model-free_sac_block_runtime.py",
+      "label": "contains"
+    },
+    {
+      "source": "task:code_entrypoint",
+      "target": "doc:model-free_sac_block_runtime.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:model_free",
+      "target": "doc:model-free_sac_block_runtime.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:sac_runtime",
+      "target": "doc:model-free_sac_block_runtime.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:testing",
+      "target": "doc:model-free_sac_block_runtime.py",
+      "label": "opens"
+    },
+    {
+      "source": "doc:model-free_sac_block_runtime.py",
+      "target": "command:python_-m_pytest_tests_test_sac_block_runtime.py_-q",
+      "label": "documents_command"
+    },
+    {
+      "source": "lane:code_script_entrypoints",
+      "target": "doc:model-free_run_b2_comparator_eval.py",
+      "label": "contains"
+    },
+    {
+      "source": "task:code_entrypoint",
+      "target": "doc:model-free_run_b2_comparator_eval.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:model_free",
+      "target": "doc:model-free_run_b2_comparator_eval.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:evaluation",
+      "target": "doc:model-free_run_b2_comparator_eval.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:testing",
+      "target": "doc:model-free_run_b2_comparator_eval.py",
+      "label": "opens"
+    },
+    {
+      "source": "doc:model-free_run_b2_comparator_eval.py",
+      "target": "command:python_-m_pytest_tests_test_b2_comparator_eval.py_-q",
+      "label": "documents_command"
+    },
+    {
+      "source": "lane:code_script_entrypoints",
+      "target": "doc:model-based_performance_comparison_drl_energy_miqp_baselines_pyomo_miqp_baseline.py",
+      "label": "contains"
+    },
+    {
+      "source": "task:code_entrypoint",
+      "target": "doc:model-based_performance_comparison_drl_energy_miqp_baselines_pyomo_miqp_baseline.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:model_based",
+      "target": "doc:model-based_performance_comparison_drl_energy_miqp_baselines_pyomo_miqp_baseline.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:solver",
+      "target": "doc:model-based_performance_comparison_drl_energy_miqp_baselines_pyomo_miqp_baseline.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:testing",
+      "target": "doc:model-based_performance_comparison_drl_energy_miqp_baselines_pyomo_miqp_baseline.py",
+      "label": "opens"
+    },
+    {
+      "source": "lane:code_script_entrypoints",
+      "target": "doc:tools_build_ch2_citation_graph_index.py",
+      "label": "contains"
+    },
+    {
+      "source": "task:code_entrypoint",
+      "target": "doc:tools_build_ch2_citation_graph_index.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:citation_audit",
+      "target": "doc:tools_build_ch2_citation_graph_index.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:graphify",
+      "target": "doc:tools_build_ch2_citation_graph_index.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:testing",
+      "target": "doc:tools_build_ch2_citation_graph_index.py",
+      "label": "opens"
+    },
+    {
+      "source": "doc:tools_build_ch2_citation_graph_index.py",
+      "target": "command:python_-m_pytest_tests_test_build_ch2_citation_graph_index.py_-q",
+      "label": "documents_command"
+    },
+    {
+      "source": "lane:code_script_entrypoints",
+      "target": "doc:tools_build_ch34_citation_graph_indexes.py",
+      "label": "contains"
+    },
+    {
+      "source": "task:code_entrypoint",
+      "target": "doc:tools_build_ch34_citation_graph_indexes.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:citation_audit",
+      "target": "doc:tools_build_ch34_citation_graph_indexes.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:graphify",
+      "target": "doc:tools_build_ch34_citation_graph_indexes.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:testing",
+      "target": "doc:tools_build_ch34_citation_graph_indexes.py",
+      "label": "opens"
+    },
+    {
+      "source": "doc:tools_build_ch34_citation_graph_indexes.py",
+      "target": "command:python_-m_pytest_tests_test_build_ch34_citation_graph_indexes.py_-q",
+      "label": "documents_command"
+    },
+    {
+      "source": "lane:code_script_entrypoints",
+      "target": "doc:scripts_powershell_build_check_graphify_pilot_gate.ps1",
+      "label": "contains"
+    },
+    {
+      "source": "task:code_entrypoint",
+      "target": "doc:scripts_powershell_build_check_graphify_pilot_gate.ps1",
+      "label": "opens"
+    },
+    {
+      "source": "task:graphify",
+      "target": "doc:scripts_powershell_build_check_graphify_pilot_gate.ps1",
+      "label": "opens"
+    },
+    {
+      "source": "task:tooling",
+      "target": "doc:scripts_powershell_build_check_graphify_pilot_gate.ps1",
+      "label": "opens"
+    },
+    {
+      "source": "task:testing",
+      "target": "doc:scripts_powershell_build_check_graphify_pilot_gate.ps1",
+      "label": "opens"
+    },
+    {
       "source": "lane:thesis_navigation",
       "target": "doc:latex_writeups_WRITEUP_NAVIGATION.md",
       "label": "contains"
@@ -836,6 +1281,121 @@
     {
       "source": "task:thesis_writing",
       "target": "doc:CITATION_AUDIT_MASTER.md",
+      "label": "opens"
+    },
+    {
+      "source": "lane:submodules",
+      "target": "doc:.gitmodules",
+      "label": "contains"
+    },
+    {
+      "source": "task:submodule",
+      "target": "doc:.gitmodules",
+      "label": "opens"
+    },
+    {
+      "source": "task:repo_hygiene",
+      "target": "doc:.gitmodules",
+      "label": "opens"
+    },
+    {
+      "source": "task:graph_routing",
+      "target": "doc:.gitmodules",
+      "label": "opens"
+    },
+    {
+      "source": "doc:.gitmodules",
+      "target": "command:git_submodule_status_--recursive",
+      "label": "documents_command"
+    },
+    {
+      "source": "lane:submodules",
+      "target": "doc:docs_knowledge_graphs",
+      "label": "contains"
+    },
+    {
+      "source": "task:submodule",
+      "target": "doc:docs_knowledge_graphs",
+      "label": "opens"
+    },
+    {
+      "source": "task:mcp",
+      "target": "doc:docs_knowledge_graphs",
+      "label": "opens"
+    },
+    {
+      "source": "task:literature_graph",
+      "target": "doc:docs_knowledge_graphs",
+      "label": "opens"
+    },
+    {
+      "source": "doc:docs_knowledge_graphs",
+      "target": "command:git_submodule_update_--remote_docs_knowledge_graphs",
+      "label": "documents_command"
+    },
+    {
+      "source": "lane:submodules",
+      "target": "doc:docs_agent_ops_graphs",
+      "label": "contains"
+    },
+    {
+      "source": "task:submodule",
+      "target": "doc:docs_agent_ops_graphs",
+      "label": "opens"
+    },
+    {
+      "source": "task:mcp",
+      "target": "doc:docs_agent_ops_graphs",
+      "label": "opens"
+    },
+    {
+      "source": "task:graph_routing",
+      "target": "doc:docs_agent_ops_graphs",
+      "label": "opens"
+    },
+    {
+      "source": "doc:docs_agent_ops_graphs",
+      "target": "command:git_submodule_update_--remote_docs_agent_ops_graphs",
+      "label": "documents_command"
+    },
+    {
+      "source": "lane:submodules",
+      "target": "doc:alpg",
+      "label": "contains"
+    },
+    {
+      "source": "task:submodule",
+      "target": "doc:alpg",
+      "label": "opens"
+    },
+    {
+      "source": "task:external_dependency",
+      "target": "doc:alpg",
+      "label": "opens"
+    },
+    {
+      "source": "task:repo_hygiene",
+      "target": "doc:alpg",
+      "label": "opens"
+    },
+    {
+      "source": "lane:submodules",
+      "target": "doc:demkit",
+      "label": "contains"
+    },
+    {
+      "source": "task:submodule",
+      "target": "doc:demkit",
+      "label": "opens"
+    },
+    {
+      "source": "task:external_dependency",
+      "target": "doc:demkit",
+      "label": "opens"
+    },
+    {
+      "source": "task:repo_hygiene",
+      "target": "doc:demkit",
       "label": "opens"
     },
     {

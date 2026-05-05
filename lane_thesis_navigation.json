@@ -21,6 +21,15 @@
       }
     },
     {
+      "id": "task:citation_audit",
+      "type": "task",
+      "label": "Citation Audit",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "citation_audit"
+      }
+    },
+    {
       "id": "lane:thesis_navigation",
       "type": "lane",
       "label": "Thesis Navigation and Citation Controls",
@@ -78,15 +87,6 @@
         "path": "CITATION_AUDIT_MASTER.md",
         "open_when": "Use whenever a citation key is added, removed, or replaced.",
         "exists_in_private_repo": true
-      }
-    },
-    {
-      "id": "task:citation_audit",
-      "type": "task",
-      "label": "Citation Audit",
-      "subtitle": "Project-operation task route.",
-      "meta": {
-        "task": "citation_audit"
       }
     }
   ],

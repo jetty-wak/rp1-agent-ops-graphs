@@ -1,0 +1,323 @@
+{
+  "title": "Code and Script Entrypoints",
+  "description": "Safe pointers to high-level scripts and tests that agents should inspect before code changes.",
+  "nodes": [
+    {
+      "id": "task:model_free",
+      "type": "task",
+      "label": "Model Free",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "model_free"
+      }
+    },
+    {
+      "id": "task:sac_runtime",
+      "type": "task",
+      "label": "Sac Runtime",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "sac_runtime"
+      }
+    },
+    {
+      "id": "task:model_based",
+      "type": "task",
+      "label": "Model Based",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "model_based"
+      }
+    },
+    {
+      "id": "lane:code_script_entrypoints",
+      "type": "lane",
+      "label": "Code and Script Entrypoints",
+      "subtitle": "Safe pointers to high-level scripts and tests that agents should inspect before code changes.",
+      "meta": {
+        "lane_id": "code_script_entrypoints"
+      }
+    },
+    {
+      "id": "doc:model-free_sac_block_runtime.py",
+      "type": "document",
+      "label": "SAC Runtime Router",
+      "subtitle": "Central runtime mapping for model-free block configuration, training, and evaluation behavior.",
+      "meta": {
+        "path": "model-free/sac_block_runtime.py",
+        "open_when": "Use before changing model-free run wiring, evaluation rows, or block-specific SAC behavior.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:code_entrypoint",
+      "type": "task",
+      "label": "Code Entrypoint",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "code_entrypoint"
+      }
+    },
+    {
+      "id": "task:testing",
+      "type": "task",
+      "label": "Testing",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "testing"
+      }
+    },
+    {
+      "id": "doc:model-free_run_b2_comparator_eval.py",
+      "type": "document",
+      "label": "Comparator Evaluation Script",
+      "subtitle": "Entrypoint for model-free comparator evaluation workflow.",
+      "meta": {
+        "path": "model-free/run_b2_comparator_eval.py",
+        "open_when": "Use before changing comparator-evaluation logic or generated aggregate outputs.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:evaluation",
+      "type": "task",
+      "label": "Evaluation",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "evaluation"
+      }
+    },
+    {
+      "id": "doc:model-based_performance_comparison_drl_energy_miqp_baselines_pyomo_miqp_baseline.py",
+      "type": "document",
+      "label": "Pyomo Baseline Implementation",
+      "subtitle": "Core model-based optimisation baseline implementation and solver fallback logic.",
+      "meta": {
+        "path": "model-based/performance_comparison_drl_energy_miqp/baselines/pyomo_miqp_baseline.py",
+        "open_when": "Use before changing model-based solver behavior or baseline feasibility handling.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:solver",
+      "type": "task",
+      "label": "Solver",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "solver"
+      }
+    },
+    {
+      "id": "doc:tools_build_ch2_citation_graph_index.py",
+      "type": "document",
+      "label": "Chapter 2 Citation Graph Builder",
+      "subtitle": "Builds local citation graph index artifacts for Chapter 2 citation-audit work.",
+      "meta": {
+        "path": "tools/build_ch2_citation_graph_index.py",
+        "open_when": "Use before modifying Chapter 2 citation graph generation or citation audit outputs.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:citation_audit",
+      "type": "task",
+      "label": "Citation Audit",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "citation_audit"
+      }
+    },
+    {
+      "id": "task:graphify",
+      "type": "task",
+      "label": "Graphify",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "graphify"
+      }
+    },
+    {
+      "id": "doc:tools_build_ch34_citation_graph_indexes.py",
+      "type": "document",
+      "label": "Chapter 3/4 Citation Graph Builder",
+      "subtitle": "Builds current-source citation graph index artifacts for Chapter 3 and Chapter 4.",
+      "meta": {
+        "path": "tools/build_ch34_citation_graph_indexes.py",
+        "open_when": "Use before modifying Chapter 3/4 citation graph generation or local quote verification flow.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "doc:scripts_powershell_build_check_graphify_pilot_gate.ps1",
+      "type": "document",
+      "label": "Graphify Gate Wrapper",
+      "subtitle": "PowerShell gate for local graphify regression checks.",
+      "meta": {
+        "path": "scripts_powershell/build/check_graphify_pilot_gate.ps1",
+        "open_when": "Use before changing graphify query policy, graphify gates, or graph context tooling.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:tooling",
+      "type": "task",
+      "label": "Tooling",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "tooling"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "lane:code_script_entrypoints",
+      "target": "doc:model-free_sac_block_runtime.py",
+      "label": "contains"
+    },
+    {
+      "source": "lane:code_script_entrypoints",
+      "target": "doc:model-free_run_b2_comparator_eval.py",
+      "label": "contains"
+    },
+    {
+      "source": "lane:code_script_entrypoints",
+      "target": "doc:model-based_performance_comparison_drl_energy_miqp_baselines_pyomo_miqp_baseline.py",
+      "label": "contains"
+    },
+    {
+      "source": "lane:code_script_entrypoints",
+      "target": "doc:tools_build_ch2_citation_graph_index.py",
+      "label": "contains"
+    },
+    {
+      "source": "lane:code_script_entrypoints",
+      "target": "doc:tools_build_ch34_citation_graph_indexes.py",
+      "label": "contains"
+    },
+    {
+      "source": "lane:code_script_entrypoints",
+      "target": "doc:scripts_powershell_build_check_graphify_pilot_gate.ps1",
+      "label": "contains"
+    },
+    {
+      "source": "task:code_entrypoint",
+      "target": "doc:model-free_sac_block_runtime.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:model_free",
+      "target": "doc:model-free_sac_block_runtime.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:sac_runtime",
+      "target": "doc:model-free_sac_block_runtime.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:testing",
+      "target": "doc:model-free_sac_block_runtime.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:code_entrypoint",
+      "target": "doc:model-free_run_b2_comparator_eval.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:model_free",
+      "target": "doc:model-free_run_b2_comparator_eval.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:evaluation",
+      "target": "doc:model-free_run_b2_comparator_eval.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:testing",
+      "target": "doc:model-free_run_b2_comparator_eval.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:code_entrypoint",
+      "target": "doc:model-based_performance_comparison_drl_energy_miqp_baselines_pyomo_miqp_baseline.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:model_based",
+      "target": "doc:model-based_performance_comparison_drl_energy_miqp_baselines_pyomo_miqp_baseline.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:solver",
+      "target": "doc:model-based_performance_comparison_drl_energy_miqp_baselines_pyomo_miqp_baseline.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:testing",
+      "target": "doc:model-based_performance_comparison_drl_energy_miqp_baselines_pyomo_miqp_baseline.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:code_entrypoint",
+      "target": "doc:tools_build_ch2_citation_graph_index.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:citation_audit",
+      "target": "doc:tools_build_ch2_citation_graph_index.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:graphify",
+      "target": "doc:tools_build_ch2_citation_graph_index.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:testing",
+      "target": "doc:tools_build_ch2_citation_graph_index.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:code_entrypoint",
+      "target": "doc:tools_build_ch34_citation_graph_indexes.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:citation_audit",
+      "target": "doc:tools_build_ch34_citation_graph_indexes.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:graphify",
+      "target": "doc:tools_build_ch34_citation_graph_indexes.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:testing",
+      "target": "doc:tools_build_ch34_citation_graph_indexes.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:code_entrypoint",
+      "target": "doc:scripts_powershell_build_check_graphify_pilot_gate.ps1",
+      "label": "opens"
+    },
+    {
+      "source": "task:graphify",
+      "target": "doc:scripts_powershell_build_check_graphify_pilot_gate.ps1",
+      "label": "opens"
+    },
+    {
+      "source": "task:tooling",
+      "target": "doc:scripts_powershell_build_check_graphify_pilot_gate.ps1",
+      "label": "opens"
+    },
+    {
+      "source": "task:testing",
+      "target": "doc:scripts_powershell_build_check_graphify_pilot_gate.ps1",
+      "label": "opens"
+    }
+  ]
+}

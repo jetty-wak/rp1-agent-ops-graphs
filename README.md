@@ -13,7 +13,9 @@ Public derived graph: includes curated roles, safe relative paths, task routing,
 - `orientation` - Orientation and Current State: Where agents should start for current status, next steps, and repository navigation.
 - `agent_rules` - Agent Rules and Evidence Boundaries: Instruction files that define agent behavior, chapter roles, and evidence-status limits.
 - `workflow_entrypoints` - Workflow Entrypoints: Safe pointers to model-free, model-based, planning, and operator workflow documentation.
+- `code_script_entrypoints` - Code and Script Entrypoints: Safe pointers to high-level scripts and tests that agents should inspect before code changes.
 - `thesis_navigation` - Thesis Navigation and Citation Controls: Where to route thesis writing, chapter-boundary, compile, and citation-audit work.
+- `submodules` - Repository Submodules: Safe map of active submodules and how agents should interpret them.
 - `graph_tooling` - Graph Tooling and MCP Routing: MCP server wiring, local graph gates, and generated graph artifacts.
 
 ## How Agents Should Use This

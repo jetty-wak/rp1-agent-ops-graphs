@@ -21,6 +21,42 @@
       }
     },
     {
+      "id": "task:graphify",
+      "type": "task",
+      "label": "Graphify",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "graphify"
+      }
+    },
+    {
+      "id": "task:tooling",
+      "type": "task",
+      "label": "Tooling",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "tooling"
+      }
+    },
+    {
+      "id": "task:mcp",
+      "type": "task",
+      "label": "Mcp",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "mcp"
+      }
+    },
+    {
+      "id": "task:literature_graph",
+      "type": "task",
+      "label": "Literature Graph",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "literature_graph"
+      }
+    },
+    {
       "id": "lane:graph_tooling",
       "type": "lane",
       "label": "Graph Tooling and MCP Routing",
@@ -41,24 +77,6 @@
       }
     },
     {
-      "id": "task:mcp",
-      "type": "task",
-      "label": "Mcp",
-      "subtitle": "Project-operation task route.",
-      "meta": {
-        "task": "mcp"
-      }
-    },
-    {
-      "id": "task:tooling",
-      "type": "task",
-      "label": "Tooling",
-      "subtitle": "Project-operation task route.",
-      "meta": {
-        "task": "tooling"
-      }
-    },
-    {
       "id": "doc:tools_graphify_pilot_queryset_policy.md",
       "type": "document",
       "label": "Graphify Query Policy",
@@ -67,15 +85,6 @@
         "path": "tools/graphify_pilot_queryset_policy.md",
         "open_when": "Use before changing graphify queries or citation graph gates.",
         "exists_in_private_repo": true
-      }
-    },
-    {
-      "id": "task:graphify",
-      "type": "task",
-      "label": "Graphify",
-      "subtitle": "Project-operation task route.",
-      "meta": {
-        "task": "graphify"
       }
     },
     {
@@ -98,15 +107,6 @@
         "path": "docs/knowledge_graphs/README.md",
         "open_when": "Use to distinguish literature graph behavior from project-operations graph behavior.",
         "exists_in_private_repo": true
-      }
-    },
-    {
-      "id": "task:literature_graph",
-      "type": "task",
-      "label": "Literature Graph",
-      "subtitle": "Project-operation task route.",
-      "meta": {
-        "task": "literature_graph"
       }
     }
   ],

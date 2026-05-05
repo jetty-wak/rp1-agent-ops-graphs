@@ -1,0 +1,226 @@
+{
+  "title": "Repository Submodules",
+  "description": "Safe map of active submodules and how agents should interpret them.",
+  "nodes": [
+    {
+      "id": "task:graph_routing",
+      "type": "task",
+      "label": "Graph Routing",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "graph_routing"
+      }
+    },
+    {
+      "id": "lane:submodules",
+      "type": "lane",
+      "label": "Repository Submodules",
+      "subtitle": "Safe map of active submodules and how agents should interpret them.",
+      "meta": {
+        "lane_id": "submodules"
+      }
+    },
+    {
+      "id": "doc:.gitmodules",
+      "type": "document",
+      "label": "Submodule Registry",
+      "subtitle": "Authoritative map of active Git submodules in the private repository.",
+      "meta": {
+        "path": ".gitmodules",
+        "open_when": "Use before adding, removing, or refreshing submodules.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:submodule",
+      "type": "task",
+      "label": "Submodule",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "submodule"
+      }
+    },
+    {
+      "id": "task:repo_hygiene",
+      "type": "task",
+      "label": "Repo Hygiene",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "repo_hygiene"
+      }
+    },
+    {
+      "id": "doc:docs_knowledge_graphs",
+      "type": "document",
+      "label": "Literature Graph Submodule",
+      "subtitle": "Public literature/citation-support graph package used by the Literature MCP server.",
+      "meta": {
+        "path": "docs/knowledge_graphs",
+        "open_when": "Use for literature graph refreshes or offline paper annotation lookup.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:mcp",
+      "type": "task",
+      "label": "Mcp",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "mcp"
+      }
+    },
+    {
+      "id": "task:literature_graph",
+      "type": "task",
+      "label": "Literature Graph",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "literature_graph"
+      }
+    },
+    {
+      "id": "doc:docs_agent_ops_graphs",
+      "type": "document",
+      "label": "Agent-Ops Graph Submodule",
+      "subtitle": "Public project-operation graph package used by the Agent-Ops MCP server.",
+      "meta": {
+        "path": "docs/agent_ops_graphs",
+        "open_when": "Use for project-navigation graph refreshes or offline graph lookup.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "doc:alpg",
+      "type": "document",
+      "label": "ALPG External Submodule",
+      "subtitle": "External profile-generation submodule used as dependency/reference material.",
+      "meta": {
+        "path": "alpg",
+        "open_when": "Use for submodule status checks only; do not treat as project-owned source.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:external_dependency",
+      "type": "task",
+      "label": "External Dependency",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "external_dependency"
+      }
+    },
+    {
+      "id": "doc:demkit",
+      "type": "document",
+      "label": "DEMKit External Submodule",
+      "subtitle": "External energy-system tooling submodule used as dependency/reference material.",
+      "meta": {
+        "path": "demkit",
+        "open_when": "Use for submodule status checks only; do not treat as project-owned source.",
+        "exists_in_private_repo": true
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "lane:submodules",
+      "target": "doc:.gitmodules",
+      "label": "contains"
+    },
+    {
+      "source": "lane:submodules",
+      "target": "doc:docs_knowledge_graphs",
+      "label": "contains"
+    },
+    {
+      "source": "lane:submodules",
+      "target": "doc:docs_agent_ops_graphs",
+      "label": "contains"
+    },
+    {
+      "source": "lane:submodules",
+      "target": "doc:alpg",
+      "label": "contains"
+    },
+    {
+      "source": "lane:submodules",
+      "target": "doc:demkit",
+      "label": "contains"
+    },
+    {
+      "source": "task:submodule",
+      "target": "doc:.gitmodules",
+      "label": "opens"
+    },
+    {
+      "source": "task:repo_hygiene",
+      "target": "doc:.gitmodules",
+      "label": "opens"
+    },
+    {
+      "source": "task:graph_routing",
+      "target": "doc:.gitmodules",
+      "label": "opens"
+    },
+    {
+      "source": "task:submodule",
+      "target": "doc:docs_knowledge_graphs",
+      "label": "opens"
+    },
+    {
+      "source": "task:mcp",
+      "target": "doc:docs_knowledge_graphs",
+      "label": "opens"
+    },
+    {
+      "source": "task:literature_graph",
+      "target": "doc:docs_knowledge_graphs",
+      "label": "opens"
+    },
+    {
+      "source": "task:submodule",
+      "target": "doc:docs_agent_ops_graphs",
+      "label": "opens"
+    },
+    {
+      "source": "task:mcp",
+      "target": "doc:docs_agent_ops_graphs",
+      "label": "opens"
+    },
+    {
+      "source": "task:graph_routing",
+      "target": "doc:docs_agent_ops_graphs",
+      "label": "opens"
+    },
+    {
+      "source": "task:submodule",
+      "target": "doc:alpg",
+      "label": "opens"
+    },
+    {
+      "source": "task:external_dependency",
+      "target": "doc:alpg",
+      "label": "opens"
+    },
+    {
+      "source": "task:repo_hygiene",
+      "target": "doc:alpg",
+      "label": "opens"
+    },
+    {
+      "source": "task:submodule",
+      "target": "doc:demkit",
+      "label": "opens"
+    },
+    {
+      "source": "task:external_dependency",
+      "target": "doc:demkit",
+      "label": "opens"
+    },
+    {
+      "source": "task:repo_hygiene",
+      "target": "doc:demkit",
+      "label": "opens"
+    }
+  ]
+}

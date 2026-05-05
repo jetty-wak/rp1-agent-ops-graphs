@@ -25,11 +25,25 @@
         "html": "lane_workflow_entrypoints.html"
       },
       {
+        "lane_id": "code_script_entrypoints",
+        "title": "Code and Script Entrypoints",
+        "json": "lane_code_script_entrypoints.json",
+        "md": "lane_code_script_entrypoints.md",
+        "html": "lane_code_script_entrypoints.html"
+      },
+      {
         "lane_id": "thesis_navigation",
         "title": "Thesis Navigation and Citation Controls",
         "json": "lane_thesis_navigation.json",
         "md": "lane_thesis_navigation.md",
         "html": "lane_thesis_navigation.html"
+      },
+      {
+        "lane_id": "submodules",
+        "title": "Repository Submodules",
+        "json": "lane_submodules.json",
+        "md": "lane_submodules.md",
+        "html": "lane_submodules.html"
       },
       {
         "lane_id": "graph_tooling",
