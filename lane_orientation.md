@@ -15,6 +15,7 @@ Where agents should start for current status, next steps, and repository navigat
 - **Navigation Cheatsheet** (`NAVIGATION.md`): Recent edit map and pointers to affected files or outputs.
 - **Recent Changes**: Project-operation task route.
 - **Handoff**: Project-operation task route.
+- **Progress Tracking**: Project-operation task route.
 
 ## Edges
 
@@ -30,3 +31,6 @@ Where agents should start for current status, next steps, and repository navigat
 - `task:navigation` -opens-> `doc:NAVIGATION.md`
 - `task:recent_changes` -opens-> `doc:NAVIGATION.md`
 - `task:handoff` -opens-> `doc:NAVIGATION.md`
+- `task:progress_tracking` -opens-> `doc:NAVIGATION.md`
+- `task:navigation` -opens-> `doc:NAVIGATION.md`
+- `task:recent_changes` -opens-> `doc:NAVIGATION.md`

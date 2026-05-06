@@ -23,6 +23,14 @@ Sanitized project-operation graph package for RP1 agents and Claude Code.
 - **Claude Instructions** (`CLAUDE.md`): Claude Code setup, common commands, graph-routing rules, and graphify workflow notes.
 - **Claude Setup**: Project-operation task route.
 - **Context Snapshot** (`CONTEXT_SNAPSHOT.md`): Compact current-session context and recent activity snapshot.
+- **Progress Tracking and Obsidian Brain**: Current progress trackers, next-step routing, and local Obsidian dashboard entrypoints.
+- **Detailed Progress Log** (`PROGRESS.md`): Long-form session history and current next-step interpretation.
+- **Progress Tracking**: Project-operation task route.
+- **Phase Progress Summary** (`PHASE_PROGRESS.md`): Condensed phase-level project status and active next step.
+- **Obsidian Start Here** (`RP1/00_START_HERE.md`): Local Obsidian vault entrypoint for human-facing RP1 orientation.
+- **Obsidian**: Project-operation task route.
+- **Obsidian Progress Dashboard** (`RP1/01_Dashboards/RP1 Progress Dashboard.md`): Local linked progress dashboard summarizing current status and next recommended work.
+- **Obsidian Progress Graph** (`RP1/02_Progress/Progress Graph.md`): Local Obsidian graph note linking closed work, current status, and next thesis risk.
 - **Workflow Entrypoints**: Safe pointers to model-free, model-based, planning, and operator workflow documentation.
 - **Model-Free Workflow** (`model-free/README.md`): Entry point for SAC training, evaluation, runtime conventions, and model-free outputs.
 - **Model Free**: Project-operation task route.
@@ -116,6 +124,31 @@ Sanitized project-operation graph package for RP1 agents and Claude Code.
 - `task:session_start` -opens-> `doc:CONTEXT_SNAPSHOT.md`
 - `task:handoff` -opens-> `doc:CONTEXT_SNAPSHOT.md`
 - `task:status_check` -opens-> `doc:CONTEXT_SNAPSHOT.md`
+- `lane:progress_tracking` -contains-> `doc:PROGRESS.md`
+- `task:progress_tracking` -opens-> `doc:PROGRESS.md`
+- `task:status_check` -opens-> `doc:PROGRESS.md`
+- `task:next_steps` -opens-> `doc:PROGRESS.md`
+- `lane:progress_tracking` -contains-> `doc:PHASE_PROGRESS.md`
+- `task:progress_tracking` -opens-> `doc:PHASE_PROGRESS.md`
+- `task:status_check` -opens-> `doc:PHASE_PROGRESS.md`
+- `task:handoff` -opens-> `doc:PHASE_PROGRESS.md`
+- `lane:progress_tracking` -contains-> `doc:NAVIGATION.md`
+- `task:progress_tracking` -opens-> `doc:NAVIGATION.md`
+- `task:navigation` -opens-> `doc:NAVIGATION.md`
+- `task:recent_changes` -opens-> `doc:NAVIGATION.md`
+- `lane:progress_tracking` -contains-> `doc:RP1_00_START_HERE.md`
+- `task:obsidian` -opens-> `doc:RP1_00_START_HERE.md`
+- `task:progress_tracking` -opens-> `doc:RP1_00_START_HERE.md`
+- `task:navigation` -opens-> `doc:RP1_00_START_HERE.md`
+- `lane:progress_tracking` -contains-> `doc:RP1_01_Dashboards_RP1_Progress_Dashboard.md`
+- `task:obsidian` -opens-> `doc:RP1_01_Dashboards_RP1_Progress_Dashboard.md`
+- `task:progress_tracking` -opens-> `doc:RP1_01_Dashboards_RP1_Progress_Dashboard.md`
+- `task:status_check` -opens-> `doc:RP1_01_Dashboards_RP1_Progress_Dashboard.md`
+- `task:next_steps` -opens-> `doc:RP1_01_Dashboards_RP1_Progress_Dashboard.md`
+- `lane:progress_tracking` -contains-> `doc:RP1_02_Progress_Progress_Graph.md`
+- `task:obsidian` -opens-> `doc:RP1_02_Progress_Progress_Graph.md`
+- `task:progress_tracking` -opens-> `doc:RP1_02_Progress_Progress_Graph.md`
+- `task:navigation` -opens-> `doc:RP1_02_Progress_Progress_Graph.md`
 - `lane:workflow_entrypoints` -contains-> `doc:model-free_README.md`
 - `task:model_free` -opens-> `doc:model-free_README.md`
 - `task:sac_runtime` -opens-> `doc:model-free_README.md`

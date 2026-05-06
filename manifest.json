@@ -18,6 +18,13 @@
         "html": "lane_agent_rules.html"
       },
       {
+        "lane_id": "progress_tracking",
+        "title": "Progress Tracking and Obsidian Brain",
+        "json": "lane_progress_tracking.json",
+        "md": "lane_progress_tracking.md",
+        "html": "lane_progress_tracking.html"
+      },
+      {
         "lane_id": "workflow_entrypoints",
         "title": "Workflow Entrypoints",
         "json": "lane_workflow_entrypoints.json",

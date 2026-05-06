@@ -4,6 +4,7 @@
 
 - `orientation`: `lane_orientation.json`, `lane_orientation.md`, `lane_orientation.html`
 - `agent_rules`: `lane_agent_rules.json`, `lane_agent_rules.md`, `lane_agent_rules.html`
+- `progress_tracking`: `lane_progress_tracking.json`, `lane_progress_tracking.md`, `lane_progress_tracking.html`
 - `workflow_entrypoints`: `lane_workflow_entrypoints.json`, `lane_workflow_entrypoints.md`, `lane_workflow_entrypoints.html`
 - `code_script_entrypoints`: `lane_code_script_entrypoints.json`, `lane_code_script_entrypoints.md`, `lane_code_script_entrypoints.html`
 - `thesis_navigation`: `lane_thesis_navigation.json`, `lane_thesis_navigation.md`, `lane_thesis_navigation.html`

@@ -1,0 +1,286 @@
+{
+  "title": "Progress Tracking and Obsidian Brain",
+  "description": "Current progress trackers, next-step routing, and local Obsidian dashboard entrypoints.",
+  "nodes": [
+    {
+      "id": "task:status_check",
+      "type": "task",
+      "label": "Status Check",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "status_check"
+      }
+    },
+    {
+      "id": "task:navigation",
+      "type": "task",
+      "label": "Navigation",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "navigation"
+      }
+    },
+    {
+      "id": "task:next_steps",
+      "type": "task",
+      "label": "Next Steps",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "next_steps"
+      }
+    },
+    {
+      "id": "doc:NAVIGATION.md",
+      "type": "document",
+      "label": "Navigation Cheatsheet",
+      "subtitle": "Recent edit map and pointers to affected files or outputs.",
+      "meta": {
+        "path": "NAVIGATION.md",
+        "open_when": "Use to find the latest changed artifacts and where a collaborator should open first.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:recent_changes",
+      "type": "task",
+      "label": "Recent Changes",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "recent_changes"
+      }
+    },
+    {
+      "id": "task:handoff",
+      "type": "task",
+      "label": "Handoff",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "handoff"
+      }
+    },
+    {
+      "id": "lane:progress_tracking",
+      "type": "lane",
+      "label": "Progress Tracking and Obsidian Brain",
+      "subtitle": "Current progress trackers, next-step routing, and local Obsidian dashboard entrypoints.",
+      "meta": {
+        "lane_id": "progress_tracking"
+      }
+    },
+    {
+      "id": "doc:PROGRESS.md",
+      "type": "document",
+      "label": "Detailed Progress Log",
+      "subtitle": "Long-form session history and current next-step interpretation.",
+      "meta": {
+        "path": "PROGRESS.md",
+        "open_when": "Use for detailed progress questions after checking the dashboard and navigation notes.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:progress_tracking",
+      "type": "task",
+      "label": "Progress Tracking",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "progress_tracking"
+      }
+    },
+    {
+      "id": "doc:PHASE_PROGRESS.md",
+      "type": "document",
+      "label": "Phase Progress Summary",
+      "subtitle": "Condensed phase-level project status and active next step.",
+      "meta": {
+        "path": "PHASE_PROGRESS.md",
+        "open_when": "Use for phase status before scanning long detailed logs.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "doc:RP1_00_START_HERE.md",
+      "type": "document",
+      "label": "Obsidian Start Here",
+      "subtitle": "Local Obsidian vault entrypoint for human-facing RP1 orientation.",
+      "meta": {
+        "path": "RP1/00_START_HERE.md",
+        "open_when": "Use when the user asks for the RP1 Brain, Obsidian usage, or human-readable project orientation.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:obsidian",
+      "type": "task",
+      "label": "Obsidian",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "obsidian"
+      }
+    },
+    {
+      "id": "doc:RP1_01_Dashboards_RP1_Progress_Dashboard.md",
+      "type": "document",
+      "label": "Obsidian Progress Dashboard",
+      "subtitle": "Local linked progress dashboard summarizing current status and next recommended work.",
+      "meta": {
+        "path": "RP1/01_Dashboards/RP1 Progress Dashboard.md",
+        "open_when": "Use for progress questions that should be visible in Obsidian.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "doc:RP1_02_Progress_Progress_Graph.md",
+      "type": "document",
+      "label": "Obsidian Progress Graph",
+      "subtitle": "Local Obsidian graph note linking closed work, current status, and next thesis risk.",
+      "meta": {
+        "path": "RP1/02_Progress/Progress Graph.md",
+        "open_when": "Use when a visual or linked progress map is more useful than a linear tracker.",
+        "exists_in_private_repo": true
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "lane:progress_tracking",
+      "target": "doc:PROGRESS.md",
+      "label": "contains"
+    },
+    {
+      "source": "lane:progress_tracking",
+      "target": "doc:PHASE_PROGRESS.md",
+      "label": "contains"
+    },
+    {
+      "source": "lane:progress_tracking",
+      "target": "doc:NAVIGATION.md",
+      "label": "contains"
+    },
+    {
+      "source": "lane:progress_tracking",
+      "target": "doc:RP1_00_START_HERE.md",
+      "label": "contains"
+    },
+    {
+      "source": "lane:progress_tracking",
+      "target": "doc:RP1_01_Dashboards_RP1_Progress_Dashboard.md",
+      "label": "contains"
+    },
+    {
+      "source": "lane:progress_tracking",
+      "target": "doc:RP1_02_Progress_Progress_Graph.md",
+      "label": "contains"
+    },
+    {
+      "source": "task:navigation",
+      "target": "doc:NAVIGATION.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:recent_changes",
+      "target": "doc:NAVIGATION.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:handoff",
+      "target": "doc:NAVIGATION.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:progress_tracking",
+      "target": "doc:PROGRESS.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:status_check",
+      "target": "doc:PROGRESS.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:next_steps",
+      "target": "doc:PROGRESS.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:progress_tracking",
+      "target": "doc:PHASE_PROGRESS.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:status_check",
+      "target": "doc:PHASE_PROGRESS.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:handoff",
+      "target": "doc:PHASE_PROGRESS.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:progress_tracking",
+      "target": "doc:NAVIGATION.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:navigation",
+      "target": "doc:NAVIGATION.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:recent_changes",
+      "target": "doc:NAVIGATION.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:obsidian",
+      "target": "doc:RP1_00_START_HERE.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:progress_tracking",
+      "target": "doc:RP1_00_START_HERE.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:navigation",
+      "target": "doc:RP1_00_START_HERE.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:obsidian",
+      "target": "doc:RP1_01_Dashboards_RP1_Progress_Dashboard.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:progress_tracking",
+      "target": "doc:RP1_01_Dashboards_RP1_Progress_Dashboard.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:status_check",
+      "target": "doc:RP1_01_Dashboards_RP1_Progress_Dashboard.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:next_steps",
+      "target": "doc:RP1_01_Dashboards_RP1_Progress_Dashboard.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:obsidian",
+      "target": "doc:RP1_02_Progress_Progress_Graph.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:progress_tracking",
+      "target": "doc:RP1_02_Progress_Progress_Graph.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:navigation",
+      "target": "doc:RP1_02_Progress_Progress_Graph.md",
+      "label": "opens"
+    }
+  ]
+}

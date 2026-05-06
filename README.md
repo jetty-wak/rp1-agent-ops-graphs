@@ -12,6 +12,7 @@ Public derived graph: includes curated roles, safe relative paths, task routing,
 
 - `orientation` - Orientation and Current State: Where agents should start for current status, next steps, and repository navigation.
 - `agent_rules` - Agent Rules and Evidence Boundaries: Instruction files that define agent behavior, chapter roles, and evidence-status limits.
+- `progress_tracking` - Progress Tracking and Obsidian Brain: Current progress trackers, next-step routing, and local Obsidian dashboard entrypoints.
 - `workflow_entrypoints` - Workflow Entrypoints: Safe pointers to model-free, model-based, planning, and operator workflow documentation.
 - `code_script_entrypoints` - Code and Script Entrypoints: Safe pointers to high-level scripts and tests that agents should inspect before code changes.
 - `thesis_navigation` - Thesis Navigation and Citation Controls: Where to route thesis writing, chapter-boundary, compile, and citation-audit work.
