@@ -90,6 +90,15 @@ Sanitized project-operation graph package for RP1 agents and Claude Code.
 - **RL-ADN Web Reference Copy** (`RL-ADN`): Ignored local copy of the EnergyQuantResearch RL-ADN repository for reference only.
 - **DRL Energy Scheduling Web Reference Copy** (`DRL-for-Energy-Systems-Optimal-Scheduling`): Ignored local copy of the EnergyQuantResearch DRL scheduling repository for reference only.
 - **Ignore Rules for External Copies** (`.gitignore`): Records that local external web-repo copies are ignored and not active submodules.
+- **PDF Evidence Index**: Metadata-only PDF evidence manifests linking MCP literature lookup and local graphify citation gates.
+- **PDF Evidence Index README** (`docs/pdf_evidence_index/README.md`): Explains the metadata-only PDF evidence layer and how MCP, graphify, and Obsidian should use it.
+- **Pdf Evidence**: Project-operation task route.
+- **Current Cited PDF Manifest** (`docs/pdf_evidence_index/current_cited_pdf_manifest.json`): Sanitized current Chapter 2-4 citation-to-local-evidence mapping for graphify citation checks.
+- **Bibliography PDF Manifest** (`docs/pdf_evidence_index/bibliography_pdf_manifest.json`): Broader bibliography-to-local-evidence metadata inventory without publishing PDFs.
+- **Missing PDF Sources** (`docs/pdf_evidence_index/missing_sources.json`): Current source-location gaps from Chapter 2-4 graphify location manifests.
+- **Source Recovery**: Project-operation task route.
+- **PDF Evidence Index Builder** (`tools/build_pdf_evidence_index.py`): Regenerates sanitized PDF evidence metadata manifests.
+- **python tools/build_pdf_evidence_index.py --out-dir docs/pdf_evidence_index**: Sanitized command reference.
 - **Graph Tooling and MCP Routing**: MCP server wiring, local graph gates, and generated graph artifacts.
 - **MCP Server Map** (`.mcp.json`): Local MCP configuration for project graph servers.
 - **Graphify Query Policy** (`tools/graphify_pilot_queryset_policy.md`): Governance policy for local graphify query sets and regression gates.
@@ -250,6 +259,27 @@ Sanitized project-operation graph package for RP1 agents and Claude Code.
 - `lane:external_reference_repos` -contains-> `doc:.gitignore`
 - `task:external_reference` -opens-> `doc:.gitignore`
 - `task:repo_hygiene` -opens-> `doc:.gitignore`
+- `lane:pdf_evidence_index` -contains-> `doc:docs_pdf_evidence_index_README.md`
+- `task:pdf_evidence` -opens-> `doc:docs_pdf_evidence_index_README.md`
+- `task:citation_audit` -opens-> `doc:docs_pdf_evidence_index_README.md`
+- `task:graph_routing` -opens-> `doc:docs_pdf_evidence_index_README.md`
+- `lane:pdf_evidence_index` -contains-> `doc:docs_pdf_evidence_index_current_cited_pdf_manifest.json`
+- `task:pdf_evidence` -opens-> `doc:docs_pdf_evidence_index_current_cited_pdf_manifest.json`
+- `task:citation_audit` -opens-> `doc:docs_pdf_evidence_index_current_cited_pdf_manifest.json`
+- `task:graphify` -opens-> `doc:docs_pdf_evidence_index_current_cited_pdf_manifest.json`
+- `lane:pdf_evidence_index` -contains-> `doc:docs_pdf_evidence_index_bibliography_pdf_manifest.json`
+- `task:pdf_evidence` -opens-> `doc:docs_pdf_evidence_index_bibliography_pdf_manifest.json`
+- `task:literature_graph` -opens-> `doc:docs_pdf_evidence_index_bibliography_pdf_manifest.json`
+- `task:graph_routing` -opens-> `doc:docs_pdf_evidence_index_bibliography_pdf_manifest.json`
+- `lane:pdf_evidence_index` -contains-> `doc:docs_pdf_evidence_index_missing_sources.json`
+- `task:pdf_evidence` -opens-> `doc:docs_pdf_evidence_index_missing_sources.json`
+- `task:citation_audit` -opens-> `doc:docs_pdf_evidence_index_missing_sources.json`
+- `task:source_recovery` -opens-> `doc:docs_pdf_evidence_index_missing_sources.json`
+- `lane:pdf_evidence_index` -contains-> `doc:tools_build_pdf_evidence_index.py`
+- `task:pdf_evidence` -opens-> `doc:tools_build_pdf_evidence_index.py`
+- `task:tooling` -opens-> `doc:tools_build_pdf_evidence_index.py`
+- `task:graph_routing` -opens-> `doc:tools_build_pdf_evidence_index.py`
+- `doc:tools_build_pdf_evidence_index.py` -documents_command-> `command:python_tools_build_pdf_evidence_index.py_--out-dir_docs_pdf_evidence_index`
 - `lane:graph_tooling` -contains-> `doc:.mcp.json`
 - `task:mcp` -opens-> `doc:.mcp.json`
 - `task:graph_routing` -opens-> `doc:.mcp.json`

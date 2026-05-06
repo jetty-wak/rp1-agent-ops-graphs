@@ -18,6 +18,7 @@ Public derived graph: includes curated roles, safe relative paths, task routing,
 - `thesis_navigation` - Thesis Navigation and Citation Controls: Where to route thesis writing, chapter-boundary, compile, and citation-audit work.
 - `submodules` - Repository Submodules: Safe map of active submodules and how agents should interpret them.
 - `external_reference_repos` - External Web Reference Copies: Safe map of ignored local web-repo copies that are not project-owned submodules.
+- `pdf_evidence_index` - PDF Evidence Index: Metadata-only PDF evidence manifests linking MCP literature lookup and local graphify citation gates.
 - `graph_tooling` - Graph Tooling and MCP Routing: MCP server wiring, local graph gates, and generated graph artifacts.
 
 ## How Agents Should Use This

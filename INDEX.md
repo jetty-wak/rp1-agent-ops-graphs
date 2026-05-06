@@ -10,6 +10,7 @@
 - `thesis_navigation`: `lane_thesis_navigation.json`, `lane_thesis_navigation.md`, `lane_thesis_navigation.html`
 - `submodules`: `lane_submodules.json`, `lane_submodules.md`, `lane_submodules.html`
 - `external_reference_repos`: `lane_external_reference_repos.json`, `lane_external_reference_repos.md`, `lane_external_reference_repos.html`
+- `pdf_evidence_index`: `lane_pdf_evidence_index.json`, `lane_pdf_evidence_index.md`, `lane_pdf_evidence_index.html`
 - `graph_tooling`: `lane_graph_tooling.json`, `lane_graph_tooling.md`, `lane_graph_tooling.html`
 
 ## Full Graph

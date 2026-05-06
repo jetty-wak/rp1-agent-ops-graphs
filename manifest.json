@@ -60,6 +60,13 @@
         "html": "lane_external_reference_repos.html"
       },
       {
+        "lane_id": "pdf_evidence_index",
+        "title": "PDF Evidence Index",
+        "json": "lane_pdf_evidence_index.json",
+        "md": "lane_pdf_evidence_index.md",
+        "html": "lane_pdf_evidence_index.html"
+      },
+      {
         "lane_id": "graph_tooling",
         "title": "Graph Tooling and MCP Routing",
         "json": "lane_graph_tooling.json",

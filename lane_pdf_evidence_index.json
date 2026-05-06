@@ -1,0 +1,235 @@
+{
+  "title": "PDF Evidence Index",
+  "description": "Metadata-only PDF evidence manifests linking MCP literature lookup and local graphify citation gates.",
+  "nodes": [
+    {
+      "id": "task:graph_routing",
+      "type": "task",
+      "label": "Graph Routing",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "graph_routing"
+      }
+    },
+    {
+      "id": "task:citation_audit",
+      "type": "task",
+      "label": "Citation Audit",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "citation_audit"
+      }
+    },
+    {
+      "id": "task:graphify",
+      "type": "task",
+      "label": "Graphify",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "graphify"
+      }
+    },
+    {
+      "id": "task:tooling",
+      "type": "task",
+      "label": "Tooling",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "tooling"
+      }
+    },
+    {
+      "id": "task:literature_graph",
+      "type": "task",
+      "label": "Literature Graph",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "literature_graph"
+      }
+    },
+    {
+      "id": "lane:pdf_evidence_index",
+      "type": "lane",
+      "label": "PDF Evidence Index",
+      "subtitle": "Metadata-only PDF evidence manifests linking MCP literature lookup and local graphify citation gates.",
+      "meta": {
+        "lane_id": "pdf_evidence_index"
+      }
+    },
+    {
+      "id": "doc:docs_pdf_evidence_index_README.md",
+      "type": "document",
+      "label": "PDF Evidence Index README",
+      "subtitle": "Explains the metadata-only PDF evidence layer and how MCP, graphify, and Obsidian should use it.",
+      "meta": {
+        "path": "docs/pdf_evidence_index/README.md",
+        "open_when": "Use when routing questions about local PDFs, citation-source provenance, or evidence manifests.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:pdf_evidence",
+      "type": "task",
+      "label": "Pdf Evidence",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "pdf_evidence"
+      }
+    },
+    {
+      "id": "doc:docs_pdf_evidence_index_current_cited_pdf_manifest.json",
+      "type": "document",
+      "label": "Current Cited PDF Manifest",
+      "subtitle": "Sanitized current Chapter 2-4 citation-to-local-evidence mapping for graphify citation checks.",
+      "meta": {
+        "path": "docs/pdf_evidence_index/current_cited_pdf_manifest.json",
+        "open_when": "Use before quote-first graphify checks or source-location gap review.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "doc:docs_pdf_evidence_index_bibliography_pdf_manifest.json",
+      "type": "document",
+      "label": "Bibliography PDF Manifest",
+      "subtitle": "Broader bibliography-to-local-evidence metadata inventory without publishing PDFs.",
+      "meta": {
+        "path": "docs/pdf_evidence_index/bibliography_pdf_manifest.json",
+        "open_when": "Use to connect Literature MCP metadata with local evidence availability.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "doc:docs_pdf_evidence_index_missing_sources.json",
+      "type": "document",
+      "label": "Missing PDF Sources",
+      "subtitle": "Current source-location gaps from Chapter 2-4 graphify location manifests.",
+      "meta": {
+        "path": "docs/pdf_evidence_index/missing_sources.json",
+        "open_when": "Use before recovery work for citation PDFs or source-location cleanup.",
+        "exists_in_private_repo": true
+      }
+    },
+    {
+      "id": "task:source_recovery",
+      "type": "task",
+      "label": "Source Recovery",
+      "subtitle": "Project-operation task route.",
+      "meta": {
+        "task": "source_recovery"
+      }
+    },
+    {
+      "id": "doc:tools_build_pdf_evidence_index.py",
+      "type": "document",
+      "label": "PDF Evidence Index Builder",
+      "subtitle": "Regenerates sanitized PDF evidence metadata manifests.",
+      "meta": {
+        "path": "tools/build_pdf_evidence_index.py",
+        "open_when": "Use when citation PDF mappings or bibliography source inventory changes.",
+        "exists_in_private_repo": true
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "lane:pdf_evidence_index",
+      "target": "doc:docs_pdf_evidence_index_README.md",
+      "label": "contains"
+    },
+    {
+      "source": "lane:pdf_evidence_index",
+      "target": "doc:docs_pdf_evidence_index_current_cited_pdf_manifest.json",
+      "label": "contains"
+    },
+    {
+      "source": "lane:pdf_evidence_index",
+      "target": "doc:docs_pdf_evidence_index_bibliography_pdf_manifest.json",
+      "label": "contains"
+    },
+    {
+      "source": "lane:pdf_evidence_index",
+      "target": "doc:docs_pdf_evidence_index_missing_sources.json",
+      "label": "contains"
+    },
+    {
+      "source": "lane:pdf_evidence_index",
+      "target": "doc:tools_build_pdf_evidence_index.py",
+      "label": "contains"
+    },
+    {
+      "source": "task:pdf_evidence",
+      "target": "doc:docs_pdf_evidence_index_README.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:citation_audit",
+      "target": "doc:docs_pdf_evidence_index_README.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:graph_routing",
+      "target": "doc:docs_pdf_evidence_index_README.md",
+      "label": "opens"
+    },
+    {
+      "source": "task:pdf_evidence",
+      "target": "doc:docs_pdf_evidence_index_current_cited_pdf_manifest.json",
+      "label": "opens"
+    },
+    {
+      "source": "task:citation_audit",
+      "target": "doc:docs_pdf_evidence_index_current_cited_pdf_manifest.json",
+      "label": "opens"
+    },
+    {
+      "source": "task:graphify",
+      "target": "doc:docs_pdf_evidence_index_current_cited_pdf_manifest.json",
+      "label": "opens"
+    },
+    {
+      "source": "task:pdf_evidence",
+      "target": "doc:docs_pdf_evidence_index_bibliography_pdf_manifest.json",
+      "label": "opens"
+    },
+    {
+      "source": "task:literature_graph",
+      "target": "doc:docs_pdf_evidence_index_bibliography_pdf_manifest.json",
+      "label": "opens"
+    },
+    {
+      "source": "task:graph_routing",
+      "target": "doc:docs_pdf_evidence_index_bibliography_pdf_manifest.json",
+      "label": "opens"
+    },
+    {
+      "source": "task:pdf_evidence",
+      "target": "doc:docs_pdf_evidence_index_missing_sources.json",
+      "label": "opens"
+    },
+    {
+      "source": "task:citation_audit",
+      "target": "doc:docs_pdf_evidence_index_missing_sources.json",
+      "label": "opens"
+    },
+    {
+      "source": "task:source_recovery",
+      "target": "doc:docs_pdf_evidence_index_missing_sources.json",
+      "label": "opens"
+    },
+    {
+      "source": "task:pdf_evidence",
+      "target": "doc:tools_build_pdf_evidence_index.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:tooling",
+      "target": "doc:tools_build_pdf_evidence_index.py",
+      "label": "opens"
+    },
+    {
+      "source": "task:graph_routing",
+      "target": "doc:tools_build_pdf_evidence_index.py",
+      "label": "opens"
+    }
+  ]
+}
